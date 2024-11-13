@@ -1,7 +1,7 @@
 function Dashboard() {
     return ( 
         <>
-            <h1>Dashboard</h1>
+            <h1 className="font-inter">Dashboard</h1>
         </>
      );
 }

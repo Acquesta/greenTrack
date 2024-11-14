@@ -1,16 +1,16 @@
-function MenuHeader() {
+function MenuHeader({ handleMenu }) {
     return (
-        <div className="flex  justify-between ">
+        <div className="z-30 fixed md:ml-[20vw] max-md:w-[100vw] md:static flex justify-between bg-[#141619] py-6 px-8">
             <div className="flex items-center gap-10 w-[25vw]">
                 {/* hamburguer e pesquisa */}
-                <div className="flex flex-col gap-1 cursor-pointer">
+                <div onClick={() => handleMenu()} className="md:hidden flex flex-col gap-1 cursor-pointer">
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                 </div>
                 <div className="flex items-center">
                     <input type="text" placeholder="Pesquisar" className=" hidden xl:block w-[10vw] bg-[#202731] pl-3 py-2 text-xl font-light rounded-lg text-white" />
-                    <svg className="-ml-10" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="xl:-ml-10 " width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.44967 9.44975C11.3827 7.51675 11.3827 4.38274 9.44967 2.44975C7.51667 0.516751 4.38266 0.516751 2.44967 2.44975C0.51667 4.38274 0.51667 7.51675 2.44967 9.44975C4.38266 11.3827 7.51667 11.3827 9.44967 9.44975ZM9.44967 9.44975L14.9497 14.9497" stroke="white" />
                     </svg>
                 </div>

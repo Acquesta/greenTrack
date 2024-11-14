@@ -9,12 +9,12 @@ import arvore from '../../assets/tree.svg'
 import greenTrackLogo from '../../assets/greenTrack.svg'
 
 
-export default function MenuDashboard() {
+export default function MenuDashboard({ mostraMenu }) {
   return (
-    <div className="fixed bg-[#202731] w-[20vw] h-[100vh] pt-6 text-white flex flex-col justify-between">
+    <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} z-20 fixed w-2/3 max-md:top-14 md:fixed bg-[#202731] md:w-[20vw] h-[100vh] pt-6 text-white md:flex flex-col justify-between`}>
         <div>
             <h2 className="text-2xl font-bold uppercase text-white text-center ">
-                <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[3vw] mx-auto"/>
+                <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[10vw] md:h-[4vw] mx-auto"/>
             </h2>
             <div className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
                 <svg

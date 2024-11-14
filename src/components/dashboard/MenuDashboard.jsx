@@ -1,18 +1,22 @@
 import MenuItem from "./MenuItem";
 
-import relogio from '../assets/v2.svg'
-import bateria from '../assets/Union.svg'
-import ferramentas from '../assets/Union1.svg'
-import grafico from '../assets/reception-4.svg'
-import arvore from '../assets/tree.svg'
+import relogio from '../../assets/v2.svg'
+import bateria from '../../assets/Union.svg'
+import ferramentas from '../../assets/Union1.svg'
+import grafico from '../../assets/reception-4.svg'
+import arvore from '../../assets/tree.svg'
+
+import greenTrackLogo from '../../assets/greenTrack.svg'
 
 
 export default function MenuDashboard() {
   return (
     <div className="fixed bg-[#202731] w-[20vw] h-[100vh] pt-6 text-white flex flex-col justify-between">
         <div>
-            <h2 className="text-2xl font-bold uppercase text-white text-center mx-auto">GreenTrack</h2>
-            <div className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367]">
+            <h2 className="text-2xl font-bold uppercase text-white text-center ">
+                <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[3vw] mx-auto"/>
+            </h2>
+            <div className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
                 <svg
                 width="22"
                 height="22"
@@ -50,7 +54,7 @@ export default function MenuDashboard() {
                     />
                     <MenuItem 
                         svg = {bateria}
-                        nome = 'Eficência'
+                        nome = 'Eficiência'
                     />
                     <MenuItem 
                         svg = {ferramentas}
@@ -69,7 +73,7 @@ export default function MenuDashboard() {
         </div>
       <div className="bottom-5 flex items-center justify-center gap-5 px-auto py-6 border-t-[1px] border-white">
         <div className="w-10 h-10 bg-slate-300 rounded-full">
-            {/* IMGAGEM USUSARIO */}
+            {/* IMAGEM USUSÁRIO */}
         </div>
         <div>
             <h3 className="text-xl font-bold">Lorenzo</h3>

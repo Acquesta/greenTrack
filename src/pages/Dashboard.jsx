@@ -1,8 +1,10 @@
+import MenuDashboard from "../components/menuDashboard";
+
 function Dashboard() {
     return ( 
-        <>
-            <h1 className="font-inter">Dashboard</h1>
-        </>
+        <div className="h-[200vh] bg-[#141619]">
+            <MenuDashboard />
+        </div>
      );
 }
 

@@ -11,7 +11,7 @@ import greenTrackLogo from '../../assets/greenTrack.svg'
 
 export default function MenuDashboard({ mostraMenu }) {
   return (
-    <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} z-20 fixed w-2/3 max-md:top-14 md:fixed bg-[#202731] md:w-[20vw] h-[100vh] pt-6 text-white md:flex flex-col justify-between`}>
+    <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} md:opacity-100 z-20 fixed w-2/3 max-md:top-14 md:fixed bg-[#202731] md:w-[20vw] h-[100vh] pt-6 text-white md:flex flex-col justify-between`}>
         <div>
             <h2 className="text-2xl font-bold uppercase text-white text-center ">
                 <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[10vw] md:h-[4vw] mx-auto"/>

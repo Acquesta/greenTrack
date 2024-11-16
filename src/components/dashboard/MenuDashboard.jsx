@@ -7,16 +7,18 @@ import grafico from '../../assets/reception-4.svg'
 import arvore from '../../assets/tree.svg'
 
 import greenTrackLogo from '../../assets/greenTrack.svg'
+import { NavLink } from "react-router-dom";
 
 
 export default function MenuDashboard({ mostraMenu }) {
+
   return (
     <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} md:opacity-100 z-20 fixed w-2/3 max-md:top-14 md:fixed bg-[#202731] md:w-[20vw] h-[100vh] pt-6 text-white md:flex flex-col justify-between`}>
         <div>
-            <h2 className="text-2xl font-bold uppercase text-white text-center ">
+            <NavLink to='/' className="text-2xl font-bold uppercase text-white text-center ">
                 <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[10vw] md:h-[4vw] mx-auto"/>
-            </h2>
-            <div className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
+            </NavLink>
+            <NavLink to='/Dashboard/home' className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
                 <svg
                 width="22"
                 height="22"
@@ -44,29 +46,34 @@ export default function MenuDashboard({ mostraMenu }) {
                     fill="white"
                 />
                 </svg>
-            </div>
+            </NavLink>
             <div className="h-auto">
                 <h3 className="text-xl font-light px-8 my-3">Funcionalidades</h3>
                 <div className="flex flex-col gap-1">
                     <MenuItem 
                         svg = {relogio}
                         nome = 'Tempo real'
+                        link = '/Dashboard/tempoReal'
                     />
                     <MenuItem 
                         svg = {bateria}
                         nome = 'Eficiência'
+                        link = '/Dashboard/eficiencia'
                     />
                     <MenuItem 
                         svg = {ferramentas}
                         nome = 'Manutenção'
+                        link = '/Dashboard/manutencao'
                     />
                     <MenuItem 
                         svg = {grafico}
                         nome = 'Previsão'
+                        link = '/Dashboard/previsao'
                     />
                     <MenuItem 
                         svg = {arvore}
                         nome = 'Sustentabilidade'
+                        link = '/Dashboard/sustentabilidade'
                     />
                 </div>
             </div>

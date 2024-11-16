@@ -3,7 +3,6 @@ import MenuHeader from "./components/dashboard/MenuHeader";
 
 import { useState } from "react";
 
-import HomeDashboard from "./components/dashboard/HomeDashboard";
 import { Outlet } from "react-router-dom";
 
 function Dashboard() {

@@ -92,7 +92,7 @@ function HomeDashboard() {
                                     {
                                         data: [2, 5, 2, 8, 1, 50, 2],
                                         // area: true,  
-                                        color: '#1EBF49',
+                                            
                                     },
                                 ]}
 

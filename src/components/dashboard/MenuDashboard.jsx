@@ -18,7 +18,7 @@ export default function MenuDashboard({ mostraMenu }) {
             <NavLink to='/' className="text-2xl font-bold uppercase text-white text-center ">
                 <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[10vw] md:h-[4vw] mx-auto"/>
             </NavLink>
-            <div className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
+            <NavLink to='/Dashboard/home' className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
                 <svg
                 width="22"
                 height="22"
@@ -31,7 +31,7 @@ export default function MenuDashboard({ mostraMenu }) {
                     fill="white"
                 />
                 </svg>
-                <h3 className="text-xl"><NavLink to='/Dashboard/home'>Dashboard</NavLink></h3>
+                <h3 className="text-xl">Dashboard</h3>
                 <svg
                 width="16"
                 height="16"
@@ -46,7 +46,7 @@ export default function MenuDashboard({ mostraMenu }) {
                     fill="white"
                 />
                 </svg>
-            </div>
+            </NavLink>
             <div className="h-auto">
                 <h3 className="text-xl font-light px-8 my-3">Funcionalidades</h3>
                 <div className="flex flex-col gap-1">

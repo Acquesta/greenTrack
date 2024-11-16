@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard.jsx'
 import Home from './pages/Homepage/Home.jsx'
 import PageNotFound from './pages/Homepage/PageNotFound.jsx'
 import Contact from './pages/Homepage/Contact.jsx'
+import HomeTop from './components/homepage/HomeTop.jsx'
 
 const router = createBrowserRouter([
   {

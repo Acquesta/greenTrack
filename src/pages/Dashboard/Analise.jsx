@@ -10,7 +10,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import download from '../../assets/download.svg'
 
 
-function Previsao() {
+function Analise() {
 
     const [colorMode, setColorMode] = useState('dark')
 
@@ -225,15 +225,88 @@ function Previsao() {
             comparison: 'Base de comparação',
         },
     ];
-    
-    return ( 
+
+    return (
         <InfosDashboar
-            title='Previsão'
-            description='Veja possíveis previsões para sua produção'
+            title='Análise Histórica e Relatórios'
+            description='Visualize em tabelas os hitóricos'
         >
-            
+            <ThemeProvider theme={newTheme} >
+                <CardHome nome='Histórico de Produção e Consumo' height="auto">
+                    <div className="px-5">
+                        <button onClick={() => exportToExcel(rows, 'Historico_Producao_Consumo')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
+                            Exportar planilha
+                            <img className="right-0" src={download} alt="" />
+                        </button>
+                        <Box sx={{ height: '50vh', width: '100%' }}>
+                            <DataGrid
+                                rows={rows}
+                                columns={columns}
+                                initialState={{
+                                    pagination: {
+                                        paginationModel: {
+                                            pageSize: 6,
+                                        },
+                                    },
+                                }}
+                                pageSizeOptions={[5]}
+                                checkboxSelection
+                                disableRowSelectionOnClick
+                            />
+                        </Box>
+                    </div>
+                </CardHome>
+                <CardHome nome='Relatórios de Desempenho' height="auto">
+                    <div className="px-5">
+                        <button onClick={() => exportToExcel(rows, 'Relatorios_Desempenho')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
+                            Exportar planilha
+                            <img className="right-0" src={download} alt="" />
+                        </button>
+                        <Box sx={{ height: '50vh', width: '100%' }}>
+                            <DataGrid
+                                rows={rows2}
+                                columns={columns2}
+                                initialState={{
+                                    pagination: {
+                                        paginationModel: {
+                                            pageSize: 6,
+                                        },
+                                    },
+                                }}
+                                pageSizeOptions={[5]}
+                                checkboxSelection
+                                disableRowSelectionOnClick
+                            />
+                        </Box>
+                    </div>
+                </CardHome>
+                <CardHome nome='Estatísticas de Economia de Emissões' height="auto">
+                    <div className="px-5">
+                        <button onClick={() => exportToExcel(rows, 'Estatisticas_Economia_Emissoes')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
+                            Exportar planilha
+                            <img className="right-0" src={download} alt="" />
+                        </button>
+                        <Box sx={{ height: '50vh', width: '100%' }}>
+                            <DataGrid
+                                rows={rows3}
+                                columns={columns3}
+                                initialState={{
+                                    pagination: {
+                                        paginationModel: {
+                                            pageSize: 6,
+                                        },
+                                    },
+                                }}
+                                pageSizeOptions={[5]}
+                                checkboxSelection
+                                disableRowSelectionOnClick
+                            />
+                        </Box>
+                    </div>
+                </CardHome>
+            </ThemeProvider>    
         </InfosDashboar>
-     );
+    );
 }
 
-export default Previsao;
+export default Analise;

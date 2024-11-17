@@ -1,8 +1,13 @@
+import InfosDashboar from "../../components/dashboard/InfosDashboard";
+
 function Sustentabilidade() {
     return ( 
-        <div className="md:ml-[20vw]">
-            <h1>Sustentabilidade</h1>
-        </div>
+        <InfosDashboar
+            title='Sustentabilidade'
+            description='Quanto seu projeto economiza'
+        >
+
+        </InfosDashboar>
      );
 }
 

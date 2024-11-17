@@ -8,6 +8,7 @@ import { useState } from "react";
 import aviso from '../../assets/exclamation.svg';
 import setaDireita from '../../assets/setaDireita.svg';
 import { Gauge } from "@mui/x-charts";
+import InfosDashboar from "./InfosDashboard";
 
 function HomeDashboard() {
 
@@ -74,10 +75,12 @@ function HomeDashboard() {
 
     return ( 
         <>
-        <div className="md:ml-[20vw] pt-6 px-8">
-                <h2 className="text-4xl uppercase font-bold mt-10 text-white">Dashboard</h2>
-                <p className="text-verde text-base font-thin mt-2">Bem-vindo ao seu dashboard</p>
-                <div className="mt-10 flex flex-col lg:flex-row gap-5 justify-between">
+        <InfosDashboar 
+            title='Dashboard'
+            description='Bem-vindo ao seu dashboard'
+        >
+
+                <div className="flex flex-col lg:flex-row gap-5 justify-between">
                     <CardHome nome='Consumo Último mês'>
                         <ThemeProvider theme={newTheme}>
                             <LineChart
@@ -150,7 +153,7 @@ function HomeDashboard() {
                     </div>
 
                 </div>
-            </div>
+        </InfosDashboar>
         </>
      );
 }

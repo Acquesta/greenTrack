@@ -5,6 +5,7 @@ import bateria from '../../assets/Union.svg'
 import ferramentas from '../../assets/Union1.svg'
 import grafico from '../../assets/reception-4.svg'
 import arvore from '../../assets/tree.svg'
+import data from '../../assets/clipboard-data.svg'
 
 import greenTrackLogo from '../../assets/greenTrack.svg'
 import { NavLink } from "react-router-dom";
@@ -13,7 +14,7 @@ import { NavLink } from "react-router-dom";
 export default function MenuDashboard({ mostraMenu }) {
 
   return (
-    <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} md:opacity-100 z-20 fixed w-2/3 max-md:top-14 md:fixed bg-[#202731] md:w-[20vw] h-[100vh] pt-6 text-white md:flex flex-col justify-between`}>
+    <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} lg:opacity-100 z-20 fixed w-2/3 max-lg:top-14 lg:fixed bg-[#202731] lg:w-[15vw] h-[100vh] pt-6 text-white lg:flex flex-col justify-between`}>
         <div>
             <NavLink to='/' className="text-2xl font-bold uppercase text-white text-center ">
                 <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[10vw] md:h-[4vw] mx-auto"/>
@@ -66,6 +67,11 @@ export default function MenuDashboard({ mostraMenu }) {
                         link = '/Dashboard/manutencao'
                     />
                     <MenuItem 
+                        svg = {data}
+                        nome = 'Análise Histórica'
+                        link = '/Dashboard/analise'
+                    />
+                    <MenuItem 
                         svg = {grafico}
                         nome = 'Previsão'
                         link = '/Dashboard/previsao'
@@ -79,12 +85,12 @@ export default function MenuDashboard({ mostraMenu }) {
             </div>
         </div>
       <div className="bottom-5 flex items-center justify-center gap-5 px-auto py-6 border-t-[1px] border-white">
-        <div className="w-10 h-10 bg-slate-300 rounded-full">
+        <div className="w-10 h-10 hidden xl:block bg-slate-300 rounded-full">
             {/* IMAGEM USUSÁRIO */}
         </div>
         <div>
-            <h3 className="text-xl font-bold">Lorenzo</h3>
-            <h3 className="text-xl font-light">Nome da empresa</h3>
+            <h3 className="text-base font-bold">Lorenzo</h3>
+            <h3 className="text-base font-light">Nome da empresa</h3>
         </div>
       </div>
     </div>

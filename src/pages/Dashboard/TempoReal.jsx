@@ -2,6 +2,7 @@ import { Box, createTheme, ThemeProvider } from "@mui/material";
 import { BarChart, Gauge, gaugeClasses, LineChart, SparkLineChart } from "@mui/x-charts";
 import CardHome from "../../components/dashboard/CardHome";
 import { useState } from "react";
+import InfosDashboar from "../../components/dashboard/InfosDashboard";
 
 function TempoReal() {
 
@@ -10,10 +11,11 @@ function TempoReal() {
     const newTheme = createTheme({ palette: { mode: colorMode } });
 
     return (
-        <div className="md:ml-[20vw] pt-6 px-8">
-            <h2 className="text-4xl uppercase font-bold mt-10 text-white">Tempo Real</h2>
-            <p className="text-verde text-base font-thin mt-2">Visualize seus dados ao vivo</p>
-            <div className="flex flex-col items-center justify-center my-10">
+        <InfosDashboar
+            title="Tempo Real"
+            description='Visualize seus dados ao vivo'
+        >
+            <div className="flex flex-col items-center justify-center">
                 <CardHome nome='Produção de H2V em litros' height='20vh'>
                     <Box sx={{ flexGrow: 1 }}>
                         <SparkLineChart
@@ -107,7 +109,7 @@ function TempoReal() {
                     </div>
                 </ThemeProvider>
             </div>
-        </div>
+        </InfosDashboar>
     );
 }
 

@@ -14,7 +14,7 @@ function Dashboard() {
     }
 
     return (
-        <div className="bg-[#141619]">
+        <div className="bg-[#141619] transition-all">
             <MenuDashboard mostraMenu={menu}/>
             <MenuHeader handleMenu={handleMenu} />
             <Outlet />

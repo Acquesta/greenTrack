@@ -1,9 +1,9 @@
 function MenuHeader({ handleMenu }) {
     return (
-        <div className="z-30 fixed md:ml-[20vw] max-md:w-[100vw] md:static flex justify-between bg-[#141619] py-6 px-8">
+        <div className="z-30 fixed top-0 lg:ml-[15vw] max-lg:w-[100vw] lg:static flex justify-between bg-[#141619] py-6 px-8">
             <div className="flex items-center gap-10 w-[25vw]">
                 {/* hamburguer e pesquisa */}
-                <div onClick={() => handleMenu()} className="md:hidden flex flex-col gap-1 cursor-pointer">
+                <div onClick={() => handleMenu()} className="lg:hidden flex flex-col gap-1 cursor-pointer">
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                     <div className="h-1 w-9 bg-white rounded-full"></div>

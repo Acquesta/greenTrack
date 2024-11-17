@@ -20,8 +20,8 @@ function HomeTop() {
                 <div className=" w-32 h-32 mb-32 ml-72 bg-azul rounded-full animate-fade-in-blur"></div>
             </div>
             <div className="relative text-white w-full">
-                <h1 className="text-9xl uppercase justify-self-center mb-10">Green Energy</h1>
-                <p className="justify-self-center text-2xl">Frase de impacto</p>
+                <h1 className="text-8xl sm:text-9xl uppercase text-center mb-10 mx-14">Green Energy</h1>
+                <p className="text-center text-2xl">Frase de impacto</p>
                 <button className="bg-verde bg-gradient-to-br from-verdeescuro/50 via-verde to-verdeescuro/50 py-4 px-8 text-white rounded-xl flex justify-self-center text-2xl mt-12 hover:text-verde hover:font-bold hover:bg-gradient hover:from-white hover:to-white">
                     CONHEÇA
                 </button>

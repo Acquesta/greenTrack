@@ -1,16 +1,16 @@
 function Dores() {
     return (
-        <div className="h-screen grid   items-center mx-40 my-10 text-white" id="Dores">
+        <div className="h-auto grid   items-center text-white gap-5" id="Dores">
             <div className=" w-full">
-                <h1 className="mt-16 text-6xl uppercase justify-self-center mb-16 font-medium text-center">DESAFIOS DA CRISE ENERGÉTICA</h1>
-                <p className="justify-self-center text-center mx-64">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda magni dolorum dolorem aperiam. Aliquam ratione eius, recusandae odit nam porro magni nobis nesciunt natus itaque alias reiciendis dolor, numquam sunt laudantium eaque, vel quidem perferendis modi praesentium? Odit, obcaecati necessitatibus enim maxime, aliquid, quidem eos exercitationem expedita perspiciatis possimus quae id accusantium itaque? Eligendi sit dolor necessitatibus </p>
+                <h1 className="my-16 mx-14 text-6xl uppercase justify-self-center font-medium text-center">DESAFIOS DA CRISE ENERGÉTICA</h1>
+                <p className="text-center mx-40 my-14 text-xl">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda magni dolorum dolorem aperiam. Aliquam ratione eius, recusandae odit nam porro magni nobis nesciunt natus itaque alias reiciendis dolor, numquam sunt laudantium eaque, vel quidem perferendis modi praesentium? Odit, obcaecati necessitatibus enim maxime, aliquid, quidem eos exercitationem expedita perspiciatis possimus quae id accusantium itaque? Eligendi sit dolor necessitatibus </p>
             </div>
-            <div className="flex justify-around">
+            <div className="grid mx-16 my-10 text-xl grid-cols-1 lg:grid-cols-3 text-center">
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
             </div>
-            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mx-32">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mx-32 ">
                 <div className="p-10 border-r border-b">
                     <h2 className="text-2xl mb-5 text-center">DADO 1</h2>
                     <p className="text-center">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>

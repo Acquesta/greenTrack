@@ -1,0 +1,980 @@
+[{
+    "tempoReal": {
+        "producao": {
+            "data": [
+                0.2,
+                0.4,
+                0.5,
+                1,
+                1.1,
+                1.5,
+                1.6,
+                2
+            ],
+            "xAxis": [
+                "01:00",
+                "02:00",
+                "03:00",
+                "04:00",
+                "05:00",
+                "06:00",
+                "07:00",
+                "08:00"
+            ]
+        },
+        "consumo": {
+            "meses": [
+                "Setembro",
+                "Outubro",
+                "Novembro"
+            ],
+            "colunas": [{
+                    "data": [
+                        4,
+                        3,
+                        5
+                    ],
+                    "label": "1° semana"
+                },
+                {
+                    "data": [
+                        1,
+                        6,
+                        3
+                    ],
+                    "label": "2° semana"
+                },
+                {
+                    "data": [
+                        2,
+                        5,
+                        4
+                    ],
+                    "label": "3° semana"
+                },
+                {
+                    "data": [
+                        2,
+                        5,
+                        4
+                    ],
+                    "label": "4° semana"
+                }
+            ]
+        },
+        "pressao": {
+            "valor": 75
+        },
+        "temperatura": {
+            "valor": 30
+        },
+        "pureza": {
+            "xAxis": [
+                10,
+                20,
+                30,
+                50,
+                80,
+                100
+            ],
+            "valores": [
+                20,
+                50.5,
+                20,
+                80.5,
+                10.5,
+                50
+            ]
+        }
+    },
+    "eficiencia": {
+        "graficoParametros": {
+            "series": [{
+                    "id": "series-1",
+                    "data": [
+                        3.2,
+                        4.5,
+                        1.8,
+                        6.3,
+                        5.7
+                    ],
+                    "label": "Hidrogênio Verde",
+                    "highlightScope": {
+                        "highlight": "item"
+                    }
+                },
+                {
+                    "id": "series-2",
+                    "data": [
+                        4.1,
+                        3.9,
+                        2.2,
+                        5.8,
+                        8.3
+                    ],
+                    "label": "Energia consumida",
+                    "stack": "total",
+                    "highlightScope": {
+                        "highlight": "item"
+                    }
+                }
+            ],
+            "xAxis": [{
+                "data": [
+                    0,
+                    3,
+                    6,
+                    9,
+                    12
+                ],
+                "scaleType": "linear",
+                "id": "axis1"
+            }]
+        },
+        "estimativas": {
+            "custo": [
+                3200,
+                4500,
+                1800,
+                6300,
+                5700
+            ],
+            "energia": [
+                4100,
+                3900,
+                2200,
+                5800,
+                8300
+            ]
+        },
+        "distribuicao": {
+            "pieChart": [{
+                    "id": 0,
+                    "value": 12,
+                    "label": "H2V"
+                },
+                {
+                    "id": 1,
+                    "value": 18,
+                    "label": "H2C"
+                },
+                {
+                    "id": 2,
+                    "value": 25,
+                    "label": "H2A"
+                }
+            ]
+        }
+    },
+    "manutencao": {
+        "monitoramentoComponentesCriticos": {
+            "columns": [{
+                    "field": "id",
+                    "headerName": "ID",
+                    "width": 90
+                },
+                {
+                    "field": "firstName",
+                    "headerName": "Equipamento",
+                    "width": 150,
+                    "editable": true
+                },
+                {
+                    "field": "lastName",
+                    "headerName": "Status",
+                    "width": 150,
+                    "editable": true
+                },
+                {
+                    "field": "age",
+                    "headerName": "Gravidade",
+                    "type": "string",
+                    "width": 110,
+                    "editable": true
+                },
+                {
+                    "field": "fullName",
+                    "headerName": "Descrição",
+                    "description": "Detalhes sobre o alerta.",
+                    "sortable": false,
+                    "width": 300
+                }
+            ],
+            "rows": [{
+                    "id": 1,
+                    "firstName": "Eletrolisador A",
+                    "lastName": "Ativo",
+                    "age": "Alta",
+                    "lastMaintenance": "2024-11-01"
+                },
+                {
+                    "id": 2,
+                    "firstName": "Compressor B",
+                    "lastName": "Inativo",
+                    "age": "Média",
+                    "lastMaintenance": "2024-10-15"
+                },
+                {
+                    "id": 3,
+                    "firstName": "Tanque C",
+                    "lastName": "Ativo",
+                    "age": "Crítica",
+                    "lastMaintenance": "2024-09-30"
+                },
+                {
+                    "id": 4,
+                    "firstName": "Bomba D",
+                    "lastName": "Ativo",
+                    "age": "Baixa",
+                    "lastMaintenance": "2024-10-01"
+                },
+                {
+                    "id": 5,
+                    "firstName": "Sensor E",
+                    "lastName": "Inativo",
+                    "age": "Baixa",
+                    "lastMaintenance": "2024-08-20"
+                },
+                {
+                    "id": 6,
+                    "firstName": "Compressor F",
+                    "lastName": "Ativo",
+                    "age": "Alta",
+                    "lastMaintenance": "2024-11-10"
+                },
+                {
+                    "id": 7,
+                    "firstName": "Tanque G",
+                    "lastName": "Inativo",
+                    "age": "Média",
+                    "lastMaintenance": "2024-09-25"
+                },
+                {
+                    "id": 8,
+                    "firstName": "Sensor H",
+                    "lastName": "Ativo",
+                    "age": "Baixa",
+                    "lastMaintenance": "2024-10-05"
+                },
+                {
+                    "id": 9,
+                    "firstName": "Eletrolisador I",
+                    "lastName": "Inativo",
+                    "age": "Crítica",
+                    "lastMaintenance": "2024-07-20"
+                }
+            ]
+        },
+        "falhasAnomalias": {
+            "columns": [{
+                    "field": "id",
+                    "headerName": "ID",
+                    "width": 90
+                },
+                {
+                    "field": "firstName",
+                    "headerName": "Sistema",
+                    "width": 150,
+                    "editable": true
+                },
+                {
+                    "field": "lastName",
+                    "headerName": "Tipo de Falha",
+                    "width": 150,
+                    "editable": true
+                },
+                {
+                    "field": "age",
+                    "headerName": "Gravidade",
+                    "type": "string",
+                    "width": 110,
+                    "editable": true
+                },
+                {
+                    "field": "fullName",
+                    "headerName": "Descrição",
+                    "description": "Detalhes sobre o alerta.",
+                    "sortable": false,
+                    "width": 200
+                },
+                {
+                    "field": "detectionTime",
+                    "headerName": "Horário de Detecção",
+                    "type": "Date",
+                    "width": 180,
+                    "editable": true
+                },
+                {
+                    "field": "operator",
+                    "headerName": "Operador Responsável",
+                    "width": 180,
+                    "editable": true
+                },
+                {
+                    "field": "status",
+                    "headerName": "Status do Alerta",
+                    "width": 150,
+                    "editable": true
+                }
+            ],
+            "rows": [{
+                    "id": 1,
+                    "firstName": "Reator A",
+                    "lastName": "Aumento de Temperatura",
+                    "age": "Alta",
+                    "detectionTime": "2024-11-16 14:32",
+                    "operator": "Carlos Silva",
+                    "status": "Aberto"
+                },
+                {
+                    "id": 2,
+                    "firstName": "Compressor B",
+                    "lastName": "Queda de Pressão",
+                    "age": "Média",
+                    "detectionTime": "2024-11-16 13:20",
+                    "operator": "Ana Souza",
+                    "status": "Em Análise"
+                },
+                {
+                    "id": 3,
+                    "firstName": "Trocador de Calor",
+                    "lastName": "Fluxo Irregular",
+                    "age": "Alta",
+                    "detectionTime": "2024-11-15 09:50",
+                    "operator": "João Costa",
+                    "status": "Resolvido"
+                },
+                {
+                    "id": 4,
+                    "firstName": "Sensor de Hidrogênio",
+                    "lastName": "Falha de Comunicação",
+                    "age": "Baixa",
+                    "detectionTime": "2024-11-14 18:45",
+                    "operator": "Mariana Oliveira",
+                    "status": "Aberto"
+                },
+                {
+                    "id": 5,
+                    "firstName": "Tanque de Armazenamento",
+                    "lastName": "Pressão Elevada",
+                    "age": "Crítica",
+                    "detectionTime": "2024-11-13 11:25",
+                    "operator": "Carlos Silva",
+                    "status": "Aberto"
+                },
+                {
+                    "id": 6,
+                    "firstName": "Linha de Distribuição",
+                    "lastName": "Vazamento Detectado",
+                    "age": "Crítica",
+                    "detectionTime": "2024-11-12 16:10",
+                    "operator": "Ana Souza",
+                    "status": "Resolvido"
+                },
+                {
+                    "id": 7,
+                    "firstName": "Eletrolisador C",
+                    "lastName": "Sobrecarga Elétrica",
+                    "age": "Alta",
+                    "detectionTime": "2024-11-11 07:30",
+                    "operator": "João Costa",
+                    "status": "Em Análise"
+                },
+                {
+                    "id": 8,
+                    "firstName": "Compressor D",
+                    "lastName": "Temperatura Alta",
+                    "age": "Média",
+                    "detectionTime": "2024-11-10 14:00",
+                    "operator": "Mariana Oliveira",
+                    "status": "Aberto"
+                },
+                {
+                    "id": 9,
+                    "firstName": "Bomba E",
+                    "lastName": "Ruído Excessivo",
+                    "age": "Baixa",
+                    "detectionTime": "2024-11-09 09:15",
+                    "operator": "Carlos Silva",
+                    "status": "Resolvido"
+                }
+            ]
+        }
+    },
+    "analiseHistorica": {
+
+        "columns": [{
+                "field": "id",
+                "headerName": "ID",
+                "width": 90
+            },
+            {
+                "field": "date",
+                "headerName": "Data",
+                "type": "Date",
+                "width": 150,
+                "editable": true
+            },
+            {
+                "field": "produced",
+                "headerName": "Produção (kg)",
+                "type": "number",
+                "width": 150,
+                "editable": true
+            },
+            {
+                "field": "consumed",
+                "headerName": "Consumo (kg)",
+                "type": "number",
+                "width": 150,
+                "editable": true
+            },
+            {
+                "field": "efficiency",
+                "headerName": "Eficiência (%)",
+                "type": "number",
+                "width": 150,
+                "editable": false
+            },
+            {
+                "field": "operator",
+                "headerName": "Operador",
+                "width": 180,
+                "editable": true
+            }
+        ],
+        "rows": [{
+                "id": 1,
+                "date": "2024-11-15",
+                "produced": 1000,
+                "consumed": 1200,
+                "operator": "Carlos Silva"
+            },
+            {
+                "id": 2,
+                "date": "2024-11-14",
+                "produced": 950,
+                "consumed": 1100,
+                "operator": "Ana Souza"
+            },
+            {
+                "id": 3,
+                "date": "2024-11-13",
+                "produced": 1100,
+                "consumed": 1150,
+                "operator": "João Costa"
+            },
+            {
+                "id": 4,
+                "date": "2024-11-12",
+                "produced": 870,
+                "consumed": 1000,
+                "operator": "Mariana Oliveira"
+            },
+            {
+                "id": 5,
+                "date": "2024-11-11",
+                "produced": 920,
+                "consumed": 1050,
+                "operator": "Carlos Silva"
+            },
+            {
+                "id": 6,
+                "date": "2024-11-10",
+                "produced": 1000,
+                "consumed": 1100,
+                "operator": "Ana Souza"
+            },
+            {
+                "id": 7,
+                "date": "2024-11-09",
+                "produced": 1050,
+                "consumed": 1200,
+                "operator": "João Costa"
+            },
+            {
+                "id": 8,
+                "date": "2024-11-08",
+                "produced": 970,
+                "consumed": 990,
+                "operator": "Mariana Oliveira"
+            },
+            {
+                "id": 9,
+                "date": "2024-11-07",
+                "produced": 880,
+                "consumed": 950,
+                "operator": "Carlos Silva"
+            }
+        ],
+        "columns2": [{
+                "field": "id",
+                "headerName": "ID",
+                "width": 90
+            },
+            {
+                "field": "period",
+                "headerName": "Período",
+                "width": 150,
+                "editable": false
+            },
+            {
+                "field": "averageProduction",
+                "headerName": "Produção Média (kg)",
+                "type": "number",
+                "width": 180,
+                "editable": false
+            },
+            {
+                "field": "peakProduction",
+                "headerName": "Produção Máxima (kg)",
+                "type": "number",
+                "width": 180,
+                "editable": false
+            },
+            {
+                "field": "averageEfficiency",
+                "headerName": "Eficiência Média (%)",
+                "type": "number",
+                "width": 180,
+                "editable": false
+            },
+            {
+                "field": "comparison",
+                "headerName": "Comparação com Período Anterior",
+                "description": "Diferença percentual em relação ao período anterior.",
+                "type": "string",
+                "width": 250,
+                "editable": false
+            }
+        ],
+        "rows2": [{
+                "id": 1,
+                "period": "01-15 Novembro 2024",
+                "averageProduction": 1020,
+                "peakProduction": 1200,
+                "averageEfficiency": 89.5,
+                "comparison": "+5% Produção, +2% Eficiência"
+            },
+            {
+                "id": 2,
+                "period": "16-31 Outubro 2024",
+                "averageProduction": 970,
+                "peakProduction": 1150,
+                "averageEfficiency": 87.3,
+                "comparison": "-3% Produção, -1% Eficiência"
+            },
+            {
+                "id": 3,
+                "period": "01-15 Outubro 2024",
+                "averageProduction": 1000,
+                "peakProduction": 1180,
+                "averageEfficiency": 88.5,
+                "comparison": "Base de comparação"
+            },
+            {
+                "id": 4,
+                "period": "16-30 Setembro 2024",
+                "averageProduction": 950,
+                "peakProduction": 1120,
+                "averageEfficiency": 86.7,
+                "comparison": "-2% Produção, -2% Eficiência"
+            },
+            {
+                "id": 5,
+                "period": "01-15 Setembro 2024",
+                "averageProduction": 980,
+                "peakProduction": 1160,
+                "averageEfficiency": 87.9,
+                "comparison": "+4% Produção, +1% Eficiência"
+            }
+        ],
+        "columns3": [{
+                "field": "id",
+                "headerName": "ID",
+                "width": 90
+            },
+            {
+                "field": "period",
+                "headerName": "Período",
+                "width": 150,
+                "editable": false
+            },
+            {
+                "field": "avoidedCO2",
+                "headerName": "Emissões Evitadas (ton CO2)",
+                "type": "number",
+                "width": 200,
+                "editable": false
+            },
+            {
+                "field": "totalAvoided",
+                "headerName": "Total Cumulativo (ton CO2)",
+                "type": "number",
+                "width": 220,
+                "editable": false
+            },
+            {
+                "field": "comparison",
+                "headerName": "Comparação com Período Anterior",
+                "description": "Diferença percentual em emissões evitadas.",
+                "width": 250,
+                "editable": false
+            }
+        ],
+        "rows3": [{
+                "id": 1,
+                "period": "01-15 Novembro 2024",
+                "avoidedCO2": 250,
+                "totalAvoided": 3750,
+                "comparison": "+7% em relação ao período anterior"
+            },
+            {
+                "id": 2,
+                "period": "16-31 Outubro 2024",
+                "avoidedCO2": 234,
+                "totalAvoided": 3500,
+                "comparison": "+5% em relação ao período anterior"
+            },
+            {
+                "id": 3,
+                "period": "01-15 Outubro 2024",
+                "avoidedCO2": 223,
+                "totalAvoided": 3266,
+                "comparison": "+4% em relação ao período anterior"
+            },
+            {
+                "id": 4,
+                "period": "16-30 Setembro 2024",
+                "avoidedCO2": 214,
+                "totalAvoided": 3043,
+                "comparison": "+3% em relação ao período anterior"
+            },
+            {
+                "id": 5,
+                "period": "01-15 Setembro 2024",
+                "avoidedCO2": 208,
+                "totalAvoided": 2829,
+                "comparison": "Base de comparação"
+            }
+        ]
+
+
+    },
+    "previsao": {
+        "lineChart": {
+            "xAxis": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "series": [
+                {
+                    "data":[2, 3, 5.5, 8.5, 1.5, 5, 1, 4, 3, 8],
+                    "label": "Previsão 1"
+                },
+                {
+                    "data":[3, 3, 5.5, 8.5, 10, 5, 1, 4, 3, 2],
+                    "label": "Previsão 2"
+                }
+            ]
+        },
+        "columns": [{
+                "field": "id",
+                "headerName": "ID",
+                "width": 90
+            },
+            {
+                "field": "firstName",
+                "headerName": "Sistema",
+                "width": 150,
+                "editable": true
+            },
+            {
+                "field": "lastName",
+                "headerName": "Tipo de Falha",
+                "width": 150,
+                "editable": true
+            },
+            {
+                "field": "age",
+                "headerName": "Gravidade",
+                "type": "string",
+                "width": 110,
+                "editable": true
+            },
+            {
+                "field": "fullName",
+                "headerName": "Descrição",
+                "description": "Detalhes sobre o alerta e sugestões de otimização.",
+                "sortable": false,
+                "width": 200,
+                "valueGetter": "(row) => `Anomalia detectada: ${row.lastName || 'N/A'} - Sugestão de otimização: ${row.optimizationSuggestion || 'N/A'}`"
+            },
+            {
+                "field": "detectionTime",
+                "headerName": "Horário de Detecção",
+                "type": "Date",
+                "width": 180,
+                "editable": true
+            },
+            {
+                "field": "operator",
+                "headerName": "Operador Responsável",
+                "width": 180,
+                "editable": true
+            },
+            {
+                "field": "status",
+                "headerName": "Status do Alerta",
+                "width": 150,
+                "editable": true
+            },
+            {
+                "field": "optimizationSuggestion",
+                "headerName": "Sugestão de Otimização",
+                "description": "Recomendações para melhorar a eficiência energética.",
+                "width": 200,
+                "editable": true
+            },
+            {
+                "field": "energyImpact",
+                "headerName": "Impacto Energético",
+                "description": "Estimativa do impacto no consumo de energia caso o alerta seja resolvido.",
+                "width": 180,
+                "editable": false
+            },
+            {
+                "field": "costReduction",
+                "headerName": "Redução de Custos Estimada",
+                "description": "Estimativa de redução de custos de energia ao implementar a otimização.",
+                "width": 180,
+                "editable": false
+            }
+        ],
+        "rows": [{
+                "id": 1,
+                "firstName": "Reator A",
+                "lastName": "Aumento de Temperatura",
+                "age": "Alta",
+                "fullName": "",
+                "detectionTime": "2024-11-16 14:32",
+                "operator": "Carlos Silva",
+                "status": "Aberto",
+                "optimizationSuggestion": "Verificar sistema de resfriamento, ajustar parâmetros de operação para reduzir o consumo energético.",
+                "energyImpact": "Alto consumo devido à temperatura elevada.",
+                "costReduction": "Potencial redução de 15% no consumo energético."
+            },
+            {
+                "id": 2,
+                "firstName": "Compressor B",
+                "lastName": "Queda de Pressão",
+                "age": "Média",
+                "fullName": "",
+                "detectionTime": "2024-11-16 13:20",
+                "operator": "Ana Souza",
+                "status": "Em Análise",
+                "optimizationSuggestion": "Recalibrar sistema para otimizar a pressão e reduzir o consumo de energia.",
+                "energyImpact": "Consumo elevado devido a ineficiência na pressão.",
+                "costReduction": "Economia de até 10% ao corrigir a pressão."
+            },
+            {
+                "id": 3,
+                "firstName": "Trocador de Calor",
+                "lastName": "Fluxo Irregular",
+                "age": "Alta",
+                "fullName": "",
+                "detectionTime": "2024-11-15 09:50",
+                "operator": "João Costa",
+                "status": "Resolvido",
+                "optimizationSuggestion": "Revisar e ajustar fluxo de fluido para otimizar troca de calor e reduzir consumo.",
+                "energyImpact": "Consumo aumentado devido a fluxo irregular.",
+                "costReduction": "Potencial redução de 20% no consumo energético."
+            },
+            {
+                "id": 4,
+                "firstName": "Sensor de Hidrogênio",
+                "lastName": "Falha de Comunicação",
+                "age": "Baixa",
+                "fullName": "",
+                "detectionTime": "2024-11-14 18:45",
+                "operator": "Mariana Oliveira",
+                "status": "Aberto",
+                "optimizationSuggestion": "Verificar conexões e recalibrar sensores para evitar falhas no sistema.",
+                "energyImpact": "Baixo impacto direto no consumo, mas falha pode afetar eficiência a longo prazo.",
+                "costReduction": "Melhoria contínua e redução de custos com manutenções corretivas."
+            },
+            {
+                "id": 5,
+                "firstName": "Tanque de Armazenamento",
+                "lastName": "Pressão Elevada",
+                "age": "Crítica",
+                "fullName": "",
+                "detectionTime": "2024-11-13 11:25",
+                "operator": "Carlos Silva",
+                "status": "Aberto",
+                "optimizationSuggestion": "Reduzir pressão para níveis ideais e otimizar o consumo do sistema.",
+                "energyImpact": "Consumo elevado devido a pressão acima do necessário.",
+                "costReduction": "Redução de custos de até 18% com ajuste de pressão."
+            },
+            {
+                "id": 6,
+                "firstName": "Linha de Distribuição",
+                "lastName": "Vazamento Detectado",
+                "age": "Crítica",
+                "fullName": "",
+                "detectionTime": "2024-11-12 16:10",
+                "operator": "Ana Souza",
+                "status": "Resolvido",
+                "optimizationSuggestion": "Realizar manutenção preventiva para evitar vazamentos e perda de energia.",
+                "energyImpact": "Vazamento significativo de energia e material.",
+                "costReduction": "Economia de até 25% ao corrigir vazamentos."
+            },
+            {
+                "id": 7,
+                "firstName": "Eletrolisador C",
+                "lastName": "Sobrecarga Elétrica",
+                "age": "Alta",
+                "fullName": "",
+                "detectionTime": "2024-11-11 07:30",
+                "operator": "João Costa",
+                "status": "Em Análise",
+                "optimizationSuggestion": "Revisar configuração elétrica e equilibrar carga para evitar sobrecargas.",
+                "energyImpact": "Alta demanda de energia devido à sobrecarga.",
+                "costReduction": "Redução de custos com maior estabilidade no consumo."
+            },
+            {
+                "id": 8,
+                "firstName": "Compressor D",
+                "lastName": "Temperatura Alta",
+                "age": "Média",
+                "fullName": "",
+                "detectionTime": "2024-11-10 14:00",
+                "operator": "Mariana Oliveira",
+                "status": "Aberto",
+                "optimizationSuggestion": "Ajustar termostatos e sistemas de ventilação para reduzir consumo de energia.",
+                "energyImpact": "Consumo elevado devido à temperatura alta no sistema.",
+                "costReduction": "Economia de até 12% ao ajustar controle de temperatura."
+            },
+            {
+                "id": 9,
+                "firstName": "Bomba E",
+                "lastName": "Ruído Excessivo",
+                "age": "Baixa",
+                "fullName": "",
+                "detectionTime": "2024-11-09 09:15",
+                "operator": "Carlos Silva",
+                "status": "Resolvido",
+                "optimizationSuggestion": "Ajustar componentes da bomba para reduzir atrito e melhorar a eficiência.",
+                "energyImpact": "Baixo impacto, mas pode causar maior desgaste e perda de eficiência ao longo do tempo.",
+                "costReduction": "Redução de custos com menor necessidade de manutenção."
+            }
+        ],
+        "dataset": [{
+                "london": 59,
+                "paris": 57,
+                "newYork": 86,
+                "seoul": 21,
+                "month": "Jan",
+                "peakDemand": false,
+                "productionCost": {
+                    "london": 1000,
+                    "paris": 950,
+                    "newYork": 1500,
+                    "seoul": 400
+                },
+                "costOptimization": "Monitorar consumo e ajustar cargas para reduzir custo de pico."
+            },
+            {
+                "london": 50,
+                "paris": 52,
+                "newYork": 78,
+                "seoul": 28,
+                "month": "Feb",
+                "peakDemand": false,
+                "productionCost": {
+                    "london": 900,
+                    "paris": 880,
+                    "newYork": 1400,
+                    "seoul": 350
+                },
+                "costOptimization": "Analisar horários de pico e usar fontes alternativas de energia."
+            },
+            {
+                "london": 47,
+                "paris": 53,
+                "newYork": 106,
+                "seoul": 41,
+                "month": "Mar",
+                "peakDemand": false,
+                "productionCost": {
+                    "london": 950,
+                    "paris": 900,
+                    "newYork": 1350,
+                    "seoul": 410
+                },
+                "costOptimization": "Ajustar processos de geração para minimizar custos operacionais."
+            },
+            {
+                "london": 45,
+                "paris": 50,
+                "newYork": 90,
+                "seoul": 45,
+                "month": "Apr",
+                "peakDemand": false,
+                "productionCost": {
+                    "london": 900,
+                    "paris": 870,
+                    "newYork": 1250,
+                    "seoul": 430
+                },
+                "costOptimization": "Melhorar a eficiência do uso de recursos energéticos durante picos de demanda."
+            },
+            {
+                "london": 52,
+                "paris": 48,
+                "newYork": 98,
+                "seoul": 49,
+                "month": "May",
+                "peakDemand": false,
+                "productionCost": {
+                    "london": 940,
+                    "paris": 910,
+                    "newYork": 1300,
+                    "seoul": 440
+                },
+                "costOptimization": "Ajustar fluxos de energia para reduzir custos com fontes caras."
+            }
+        ]
+    },
+    "sustentabilidade": {
+        "pies": [
+            { "id": 0, "value": 10, "label": "H2V", "color": "green" },
+            { "id": 1, "value": 15, "label": "H2C", "color": "grey" },
+            { "id": 2, "value": 20, "label": "H2A", "color": "blue" }
+          ],
+        "series": [
+            { "data": [4, 3, 5], "color": "green" },
+            { "data": [1, 6, 3], "color": "grey" }
+          ],
+          "lineChart1": {
+            "xAxis": [1, 2, 3, 5, 8, 10],
+            "series": [2, 5.5, 2, 8.5, 1.5, 5]
+          },
+          "lineChart2": {
+            "xAxis": [1, 2, 3, 5, 8, 10, 12, 15, 16],
+            "series": [
+                {
+                  "data": [2, 5.5, 2, 8.5, 1.5, 5],
+                  "valueFormatter": "(value) => value == null ? 'NaN' : value.toString()"
+                },
+                {
+                  "data": [null, null, null, null, 5.5, 2, 8.5, 1.5, 5]
+                },
+                {
+                  "data": [7, 8, 5, 4, null, null, 2, 5.5, 1],
+                  "valueFormatter": "(value) => value == null ? '?' : value.toString()"
+                }
+              ]
+              
+          }
+
+    },
+    "id": "1"
+}]

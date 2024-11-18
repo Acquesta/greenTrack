@@ -21,10 +21,10 @@ function Sustentabilidade() {
               series={[
                 {
                   data: [
-                    { id: 0, value: 10, label: "H2V", color: "green" },
-                    { id: 1, value: 15, label: "H2C", color: 'grey' },
-                    { id: 2, value: 20, label: "H2A", color: 'blue' },
-                  ],
+                    { "id": 0, "value": 10, "label": "H2V", "color": "green" },
+                    { "id": 1, "value": 15, "label": "H2C", "color": 'grey' },
+                    { "id": 2, "value": 20, "label": "H2A", "color": 'blue' },
+                  ]
                 },
               ]}
             />

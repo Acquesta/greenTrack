@@ -25,16 +25,7 @@ function TempoReal() {
                             showHighlight
                             xAxis={{
                                 scaleType: 'band',
-                                data: [
-                                    '01:00',
-                                    '02:00',
-                                    '03:00',
-                                    '04:00',
-                                    '05:00',
-                                    '06:00',
-                                    '07:00',
-                                    '08:00',
-                                ],
+                                data: ["01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00"]
                             }}
                         />
                     </Box>
@@ -44,7 +35,7 @@ function TempoReal() {
                         <CardHome nome='Consumo de Energia (mAh)' width="100%">
                             <BarChart
                                 xAxis={[{ scaleType: 'band', data: ['Setembro', 'Outubro', 'Novembro'] }]}
-                                series={[{ data: [4, 3, 5], label: '1° semana' }, { data: [1, 6, 3], label: '2° semana' }, { data: [2, 5], label: '3° semana' }]}
+                                series={[{ "data": [4, 3, 5], "label": "1° semana" }, { "data": [1, 6, 3], "label": "2° semana" }, { "data": [2, 5, 4], "label": "3° semana" }, { "data": [2, 5, 4], "label": "4° semana" }]}
 
                             />
                         </CardHome>

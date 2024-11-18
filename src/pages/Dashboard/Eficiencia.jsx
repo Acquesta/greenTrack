@@ -33,32 +33,6 @@ function Eficiencia() {
     xAxis: [{ data: [0, 3, 6, 9, 12], scaleType: "linear", id: "axis1" }],
   };
 
-  const requestData = {
-    type: "electricity", // Tipo de emissão (exemplo: eletricidade, combustível, etc.)
-    electricity_unit: "mwh", // Unidade (exemplo: kwh, mwh, etc.)
-    electricity_value: 500, // Quantidade de energia consumida
-    country: "US", // País
-  };
-
-  const BASE_URL = "https://www.carboninterface.com/api/v1";
-  const API_KEY = "rwpDAVGTFPlca5pdfatzaQ";
-
-  console.log("Chave da API:", API_KEY);
-
-  try {
-    const response = fetch(`${BASE_URL}/estimates`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${API_KEY}`
-      },
-      body: JSON.stringify(requestData),
-    });
-    
-  } catch (error) {
-    console.error("Erro ao buscar dados da API:", error);
-    throw error;
-  }
-
   return (
     <InfosDashboar
       title="Eficiência"

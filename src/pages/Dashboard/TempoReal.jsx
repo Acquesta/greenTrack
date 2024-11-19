@@ -1,7 +1,7 @@
 import { Box, createTheme, ThemeProvider } from "@mui/material";
 import { BarChart, Gauge, gaugeClasses, LineChart, SparkLineChart } from "@mui/x-charts";
 import CardHome from "../../components/dashboard/CardHome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InfosDashboar from "../../components/dashboard/InfosDashboard";
 
 function TempoReal() {
@@ -9,6 +9,19 @@ function TempoReal() {
     const [colorMode, setColorMode] = useState('dark')
 
     const newTheme = createTheme({ palette: { mode: colorMode } });
+
+    const [database, setDatabase ] = useState({})
+
+    useEffect(() => {
+        fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
+        .then(results => results.json())
+        .then(data => setDatabase(data[0].tempoReal))
+        .catch(error => console.log(error))
+        .finally(() => console.log('Requisição feita'))
+    }, [])
+
+    console.log(database.producao);
+    
 
     return (
         <InfosDashboar

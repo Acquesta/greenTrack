@@ -33,7 +33,7 @@ export default function Header() {
                 <ul className="space-x-20 lg:flex hidden">
                     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         <NavLink to="/" onClick={() => scrollToTop()}>Home</NavLink>
-                        <ul className={`${isDropdownOpen ? "opacity-100" : "opacity-0"} absolute bg-fundo/80 w-64
+                        <ul className={`${isDropdownOpen ? "block" : "hidden"} absolute bg-fundo/80 w-64
                              p-4 rounded-lg left-[-100px]`}>
                             <li>
                                 <a href="#Dores" className="block px-10 py-4 hover:bg-gradient-to-r from-verde to-azul rounded-lg">Dores</a>
@@ -57,8 +57,11 @@ export default function Header() {
                 <div>
                     {/* <Switch /> */}
                 </div>
+                <div className="align-center px-7 py-3 rounded-full leading-none hover:bg-white hover:text-verde hover:font-medium cursor-pointer">
+                    <Link to='/Login'>Login</Link>
+                </div>
                 <div className="align-center px-7 py-3 rounded-full leading-none bg-azul hover:bg-white hover:text-azul hover:font-medium cursor-pointer">
-                    <Link to='/Login'>LOGIN</Link>
+                    <Link to='/Register'>Registre-se</Link>
                 </div>
             </div>
             <div className="lg:hidden">
@@ -68,7 +71,7 @@ export default function Header() {
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                 </div>
-                <ul className={`${isDropdownOpen ? "opacity-100" : "opacity-0"} absolute bg-fundo/80 w-64
+                <ul className={`${isDropdownOpen ? "block" : "hidden"} absolute bg-fundo/80 w-64
                              p-4 rounded-lg right-5 mt-6`}>
 
                     <li>

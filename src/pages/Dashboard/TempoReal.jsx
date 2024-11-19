@@ -1,8 +1,9 @@
 import { Box, createTheme, ThemeProvider } from "@mui/material";
 import { BarChart, Gauge, gaugeClasses, LineChart, SparkLineChart } from "@mui/x-charts";
 import CardHome from "../../components/dashboard/CardHome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InfosDashboar from "../../components/dashboard/InfosDashboard";
+import { data } from "autoprefixer";
 
 function TempoReal() {
 
@@ -10,47 +11,63 @@ function TempoReal() {
 
     const newTheme = createTheme({ palette: { mode: colorMode } });
 
-    return (
+    const [database, setDatabase ] = useState({})
+
+    useEffect(() => {
+        fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
+        .then(results => results.json())
+        .then(data => setDatabase(data[0].tempoReal))
+        .catch(error => console.log(error))
+        .finally(() => console.log('Requisição feita'))
+    }, [])
+
+    let graficoProducao = database.producao;
+    let graficoConsumo = database.consumo;
+    let graficoPressao = database.pressao;
+    let graficoTemperatura = database.temperatura;
+    let graficoPureza = database.pureza;
+    let graficoRenovavel = database.renovavel;
+
+    console.log(graficoPureza?.valores);
+    
+   
+        return ( 
         <InfosDashboar
             title="Tempo Real"
             description='Visualize seus dados ao vivo'
         >
             <div className="flex flex-col items-center justify-center">
                 <CardHome nome='Produção de H2V em litros' height='20vh'>
-                    <Box sx={{ flexGrow: 1 }}>
-                        <SparkLineChart
-                            plotType="bar"
-                            data={[0.2, 0.4, 0.5, 1.0, 1.1, 1.5, 1.6, 2.0]}
-                            showTooltip
-                            showHighlight
-                            xAxis={{
-                                scaleType: 'band',
-                                data: [
-                                    '01:00',
-                                    '02:00',
-                                    '03:00',
-                                    '04:00',
-                                    '05:00',
-                                    '06:00',
-                                    '07:00',
-                                    '08:00',
-                                ],
-                            }}
-                        />
-                    </Box>
+                    {
+                        graficoProducao && 
+                            <Box sx={{ flexGrow: 1 }}>
+                                <SparkLineChart
+                                    plotType="bar"
+                                    data={graficoProducao.data}
+                                    showTooltip
+                                    showHighlight
+                                    xAxis={{
+                                        scaleType: 'band',
+                                        data: graficoProducao.xAxis
+                                    }}
+                                />
+                            </Box>
+                    }
                 </CardHome>
                 <ThemeProvider theme={newTheme} >
                     <div className="w-full mt-10 flex gap-4 max-lg:flex-col">
-                        <CardHome nome='Consumo de Energia (mAh)' width="100%">
-                            <BarChart
-                                xAxis={[{ scaleType: 'band', data: ['Setembro', 'Outubro', 'Novembro'] }]}
-                                series={[{ data: [4, 3, 5], label: '1° semana' }, { data: [1, 6, 3], label: '2° semana' }, { data: [2, 5], label: '3° semana' }]}
-
-                            />
-                        </CardHome>
+                        {
+                            graficoConsumo && 
+                                <CardHome nome='Consumo de Energia (mAh)' width="100%">
+                                    <BarChart
+                                        xAxis={[{ scaleType: 'band', data: graficoConsumo.meses }]}
+                                        series={graficoConsumo.colunas}
+                                    />
+                                </CardHome>
+                        }
                         <CardHome nome='Pressão' width="100%">
                             <Gauge
-                                value={75}
+                                value={graficoPressao ? graficoPressao.valor : 0}
                                 startAngle={-110}
                                 endAngle={110}
                                 sx={{
@@ -68,7 +85,7 @@ function TempoReal() {
                     <div className="w-full mt-10 flex gap-4 max-lg:flex-col">
                         <CardHome nome='Temperatura (C°)' width="100%">
                             <Gauge
-                                value={30}
+                                value={graficoTemperatura ? graficoTemperatura.valor : 0}
                                 startAngle={-110}
                                 endAngle={110}
                                 sx={{
@@ -82,35 +99,42 @@ function TempoReal() {
                                 }
                             />
                         </CardHome>
-                        <CardHome nome='Pureza do hidrogênio' width="100%">
-                            <LineChart
-                                xAxis={[{ data: [10, 20, 30, 50, 80, 100] }]}
-                                series={[
-                                    {
-                                        data: [20, 50.5, 20, 80.5, 10.5, 50],
-                                        color: '#1EBF49',
-                                    },
-                                ]}
-                            />
-                        </CardHome>
+                        {
+                            graficoPureza && 
+                                <CardHome nome='Pureza do hidrogênio' width="100%">
+                                    <LineChart
+                                        xAxis={[{ data: graficoPureza.xAxis }]}
+                                        series={[
+                                            {
+                                                data: graficoPureza?.valores,
+                                                color: '#1EBF49',
+                                            },
+                                        ]}
+                                        />
+                                </CardHome>
+                        }
                     </div>
                     <div className="mt-10 w-full">
-                        <CardHome nome='Energia Renovável'>
-                            <LineChart
-                                xAxis={[{ data: [10, 20, 30, 50, 80, 100] }]}
-                                series={[
-                                    {
-                                        data: [20, 50.5, 20, 80.5, 10.5, 50],
-                                        color: '#1EBF49',
-                                    },
-                                ]}
-                            />
-                        </CardHome>
+                        {
+                            graficoRenovavel && 
+                                <CardHome nome='Energia Renovável'>
+                                    <LineChart
+                                        xAxis={[{ data: graficoRenovavel.xAxis }]}
+                                        series={[
+                                            {
+                                                data: graficoRenovavel?.valores,
+                                                color: '#1EBF49',
+                                            },
+                                        ]}
+                                    />
+                                </CardHome>
+                        }
                     </div>
                 </ThemeProvider>
             </div>
         </InfosDashboar>
-    );
+    )
+    
 }
 
 export default TempoReal;

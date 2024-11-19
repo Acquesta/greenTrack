@@ -8,8 +8,6 @@ import Home from './pages/Homepage/Home.jsx'
 import PageNotFound from './pages/Homepage/PageNotFound.jsx'
 import Contact from './pages/Homepage/Contact.jsx'
 
-import HomeTop from './components/homepage/HomeTop.jsx'
-
 import HomeDashboard from './components/dashboard/HomeDashboard.jsx'
 import TempoReal from './pages/Dashboard/TempoReal.jsx'
 import Eficiencia from './pages/Dashboard/Eficiencia.jsx'
@@ -17,6 +15,9 @@ import Manutencao from './pages/Dashboard/Manutencao.jsx'
 import Previsao from './pages/Dashboard/Previsao.jsx'
 import Sustentabilidade from './pages/Dashboard/Susutentabilidade.jsx'
 import Analise from './pages/Dashboard/Analise.jsx'
+import Login from './pages/Homepage/Login.jsx'
+import Cadastro from './pages/Homepage/Cadastro.jsx'
+import RedefinirSenha from './pages/Homepage/RedefinirSenha.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,9 @@ const router = createBrowserRouter([
     children:[
       {index: true, element: <Home/>},
       {path: "/Contact", element: <Contact/>},
+      {path: "/Login", element: <Login/>},
+      {path: "/Cadastro", element: <Cadastro/>},
+      {path: "/RedefinirSenha", element: <RedefinirSenha/>},
       {path: "*", element: <PageNotFound/>}
     ]
   },

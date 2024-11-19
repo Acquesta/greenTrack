@@ -1,239 +1,241 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardHome from "../../components/dashboard/CardHome";
 import { Box, createTheme, ThemeProvider } from "@mui/material";
 
-import * as XLSX from 'xlsx';
+import * as XLSX from "xlsx";
 
 import InfosDashboar from "../../components/dashboard/InfosDashboard";
 import { DataGrid } from "@mui/x-data-grid";
 
-import download from '../../assets/download.svg'
-
+import download from "../../assets/download.svg";
+import { LineChart } from "@mui/x-charts";
+import { BarChart } from '@mui/x-charts/BarChart';
 
 function Previsao() {
+  const [colorMode, setColorMode] = useState("dark");
 
-    const [colorMode, setColorMode] = useState('dark')
+  const newTheme = createTheme({ palette: { mode: colorMode } });
 
-    const newTheme = createTheme({ palette: { mode: colorMode } });
+  const [database, setDatabase] = useState({})
 
-    const exportToExcel = (rows, fileName) => {
-        const worksheet = XLSX.utils.json_to_sheet(rows);
-        const workbook = XLSX.utils.book_new();
+  useEffect(() => {
+      fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
+          .then(results => results.json())
+          .then(data => setDatabase(data[0].previsao))
+          .catch(error => console.log(error))
+          .finally(() => console.log('Requisição feita'))
+  }, [])
 
-        XLSX.utils.book_append_sheet(workbook, worksheet, 'Dados');
+  let graficoPrditivos = database.lineChart;
+  let dataset = database.dataset;
 
-        XLSX.writeFile(workbook, `${fileName}.xlsx`);
-    };
+  console.log(database);
 
-    const columns = [
-        { field: 'id', headerName: 'ID', width: 90 },
-        {
-            field: 'date',
-            headerName: 'Data',
-            type: 'Date',
-            width: 150,
-            editable: true,
-        },
-        {
-            field: 'produced',
-            headerName: 'Produção (kg)',
-            type: 'number',
-            width: 150,
-            editable: true,
-        },
-        {
-            field: 'consumed',
-            headerName: 'Consumo (kg)',
-            type: 'number',
-            width: 150,
-            editable: true,
-        },
-        {
-            field: 'efficiency',
-            headerName: 'Eficiência (%)',
-            type: 'number',
-            width: 150,
-            editable: false
-        },
-        {
-            field: 'operator',
-            headerName: 'Operador',
-            width: 180,
-            editable: true,
-        },
-    ];
-    
-    const rows = [
-        { id: 1, date: '2024-11-15', produced: 1000, consumed: 1200, operator: 'Carlos Silva' },
-        { id: 2, date: '2024-11-14', produced: 950, consumed: 1100, operator: 'Ana Souza' },
-        { id: 3, date: '2024-11-13', produced: 1100, consumed: 1150, operator: 'João Costa' },
-        { id: 4, date: '2024-11-12', produced: 870, consumed: 1000, operator: 'Mariana Oliveira' },
-        { id: 5, date: '2024-11-11', produced: 920, consumed: 1050, operator: 'Carlos Silva' },
-        { id: 6, date: '2024-11-10', produced: 1000, consumed: 1100, operator: 'Ana Souza' },
-        { id: 7, date: '2024-11-09', produced: 1050, consumed: 1200, operator: 'João Costa' },
-        { id: 8, date: '2024-11-08', produced: 970, consumed: 990, operator: 'Mariana Oliveira' },
-        { id: 9, date: '2024-11-07', produced: 880, consumed: 950, operator: 'Carlos Silva' },
-    ];
-    
-    const columns2 = [
-        { field: 'id', headerName: 'ID', width: 90 },
-        {
-            field: 'period',
-            headerName: 'Período',
-            width: 150,
-            editable: false,
-        },
-        {
-            field: 'averageProduction',
-            headerName: 'Produção Média (kg)',
-            type: 'number',
-            width: 180,
-            editable: false,
-        },
-        {
-            field: 'peakProduction',
-            headerName: 'Produção Máxima (kg)',
-            type: 'number',
-            width: 180,
-            editable: false,
-        },
-        {
-            field: 'averageEfficiency',
-            headerName: 'Eficiência Média (%)',
-            type: 'number',
-            width: 180,
-            editable: false,
-        },
-        {
-            field: 'comparison',
-            headerName: 'Comparação com Período Anterior',
-            description: 'Diferença percentual em relação ao período anterior.',
-            type: 'string',
-            width: 250,
-            editable: false,
-        },
-    ];
-    
-    const rows2 = [
-        {
-            id: 1,
-            period: '01-15 Novembro 2024',
-            averageProduction: 1020,
-            peakProduction: 1200,
-            averageEfficiency: 89.5,
-            comparison: '+5% Produção, +2% Eficiência',
-        },
-        {
-            id: 2,
-            period: '16-31 Outubro 2024',
-            averageProduction: 970,
-            peakProduction: 1150,
-            averageEfficiency: 87.3,
-            comparison: '-3% Produção, -1% Eficiência',
-        },
-        {
-            id: 3,
-            period: '01-15 Outubro 2024',
-            averageProduction: 1000,
-            peakProduction: 1180,
-            averageEfficiency: 88.5,
-            comparison: 'Base de comparação',
-        },
-        {
-            id: 4,
-            period: '16-30 Setembro 2024',
-            averageProduction: 950,
-            peakProduction: 1120,
-            averageEfficiency: 86.7,
-            comparison: '-2% Produção, -2% Eficiência',
-        },
-        {
-            id: 5,
-            period: '01-15 Setembro 2024',
-            averageProduction: 980,
-            peakProduction: 1160,
-            averageEfficiency: 87.9,
-            comparison: '+4% Produção, +1% Eficiência',
-        },
-    ];
-    
-    const columns3 = [
-        { field: 'id', headerName: 'ID', width: 90 },
-        {
-            field: 'period',
-            headerName: 'Período',
-            width: 150,
-            editable: false,
-        },
-        {
-            field: 'avoidedCO2',
-            headerName: 'Emissões Evitadas (ton CO2)',
-            type: 'number',
-            width: 200,
-            editable: false,
-        },
-        {
-            field: 'totalAvoided',
-            headerName: 'Total Cumulativo (ton CO2)',
-            type: 'number',
-            width: 220,
-            editable: false,
-        },
-        {
-            field: 'comparison',
-            headerName: 'Comparação com Período Anterior',
-            description: 'Diferença percentual em emissões evitadas.',
-            width: 250,
-            editable: false,
-        },
-    ];
-    
-    const rows3 = [
-        {
-            id: 1,
-            period: '01-15 Novembro 2024',
-            avoidedCO2: 250,
-            totalAvoided: 3750,
-            comparison: '+7% em relação ao período anterior',
-        },
-        {
-            id: 2,
-            period: '16-31 Outubro 2024',
-            avoidedCO2: 234,
-            totalAvoided: 3500,
-            comparison: '+5% em relação ao período anterior',
-        },
-        {
-            id: 3,
-            period: '01-15 Outubro 2024',
-            avoidedCO2: 223,
-            totalAvoided: 3266,
-            comparison: '+4% em relação ao período anterior',
-        },
-        {
-            id: 4,
-            period: '16-30 Setembro 2024',
-            avoidedCO2: 214,
-            totalAvoided: 3043,
-            comparison: '+3% em relação ao período anterior',
-        },
-        {
-            id: 5,
-            period: '01-15 Setembro 2024',
-            avoidedCO2: 208,
-            totalAvoided: 2829,
-            comparison: 'Base de comparação',
-        },
-    ];
-    
-    return ( 
-        <InfosDashboar
-            title='Previsão'
-            description='Veja possíveis previsões para sua produção'
+  const exportToExcel = (rows, fileName) => {
+    const worksheet = XLSX.utils.json_to_sheet(rows);
+    const workbook = XLSX.utils.book_new();
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Dados");
+
+    XLSX.writeFile(workbook, `${fileName}.xlsx`);
+  };
+  //   {
+  //     london: 59,
+  //     paris: 57,
+  //     newYork: 86,
+  //     seoul: 21,
+  //     month: 'Jan',
+  //     peakDemand: false,
+  //     productionCost: { london: 1000, paris: 950, newYork: 1500, seoul: 400 },
+  //     costOptimization: 'Monitorar consumo e ajustar cargas para reduzir custo de pico.',
+  //   },
+  //   {
+  //     london: 50,
+  //     paris: 52,
+  //     newYork: 78,
+  //     seoul: 28,
+  //     month: 'Feb',
+  //     peakDemand: false,
+  //     productionCost: { london: 900, paris: 880, newYork: 1400, seoul: 350 },
+  //     costOptimization: 'Analisar horários de pico e usar fontes alternativas de energia.',
+  //   },
+  //   {
+  //     london: 47,
+  //     paris: 53,
+  //     newYork: 106,
+  //     seoul: 41,
+  //     month: 'Mar',
+  //     peakDemand: false,
+  //     productionCost: { london: 950, paris: 900, newYork: 1600, seoul: 420 },
+  //     costOptimization: 'Revisar uso de energia durante os horários de pico e automatizar processos.',
+  //   },
+  //   {
+  //     london: 54,
+  //     paris: 56,
+  //     newYork: 92,
+  //     seoul: 73,
+  //     month: 'Apr',
+  //     peakDemand: false,
+  //     productionCost: { london: 980, paris: 920, newYork: 1500, seoul: 500 },
+  //     costOptimization: 'Investir em equipamentos de maior eficiência energética.',
+  //   },
+  //   {
+  //     london: 57,
+  //     paris: 69,
+  //     newYork: 92,
+  //     seoul: 99,
+  //     month: 'May',
+  //     peakDemand: true, // Período de pico
+  //     productionCost: { london: 1300, paris: 1250, newYork: 1800, seoul: 750 },
+  //     costOptimization: 'Implementar sistemas de carga inteligente para reduzir consumo nos picos.',
+  //   },
+  //   {
+  //     london: 60,
+  //     paris: 63,
+  //     newYork: 103,
+  //     seoul: 144,
+  //     month: 'June',
+  //     peakDemand: true, // Período de pico
+  //     productionCost: { london: 1350, paris: 1300, newYork: 1900, seoul: 900 },
+  //     costOptimization: 'Aumentar a utilização de fontes renováveis durante os picos de demanda.',
+  //   },
+  //   {
+  //     london: 59,
+  //     paris: 60,
+  //     newYork: 105,
+  //     seoul: 319,
+  //     month: 'July',
+  //     peakDemand: true, // Período de pico
+  //     productionCost: { london: 1400, paris: 1350, newYork: 2000, seoul: 1200 },
+  //     costOptimization: 'Ajustar a produção e implementar tecnologias de armazenamento de energia.',
+  //   },
+  //   {
+  //     london: 65,
+  //     paris: 60,
+  //     newYork: 106,
+  //     seoul: 249,
+  //     month: 'Aug',
+  //     peakDemand: true, // Período de pico
+  //     productionCost: { london: 1450, paris: 1400, newYork: 2100, seoul: 1100 },
+  //     costOptimization: 'Revisar contratos de fornecimento de energia para reduzir custos durante picos.',
+  //   },
+  //   {
+  //     london: 51,
+  //     paris: 51,
+  //     newYork: 95,
+  //     seoul: 131,
+  //     month: 'Sept',
+  //     peakDemand: false,
+  //     productionCost: { london: 1000, paris: 950, newYork: 1500, seoul: 400 },
+  //     costOptimization: 'Melhorar sistemas de distribuição para evitar picos de demanda inesperados.',
+  //   },
+  //   {
+  //     london: 60,
+  //     paris: 65,
+  //     newYork: 97,
+  //     seoul: 55,
+  //     month: 'Oct',
+  //     peakDemand: false,
+  //     productionCost: { london: 1100, paris: 1050, newYork: 1600, seoul: 450 },
+  //     costOptimization: 'Fazer ajustes de manutenção preventiva para evitar falhas durante períodos críticos.',
+  //   },
+  //   {
+  //     london: 67,
+  //     paris: 64,
+  //     newYork: 76,
+  //     seoul: 48,
+  //     month: 'Nov',
+  //     peakDemand: false,
+  //     productionCost: { london: 1150, paris: 1100, newYork: 1550, seoul: 400 },
+  //     costOptimization: 'Analisar e otimizar o uso de energia fora dos horários de pico.',
+  //   },
+  //   {
+  //     london: 61,
+  //     paris: 70,
+  //     newYork: 103,
+  //     seoul: 25,
+  //     month: 'Dec',
+  //     peakDemand: false,
+  //     productionCost: { london: 1200, paris: 1150, newYork: 1600, seoul: 350 },
+  //     costOptimization: 'Implementar melhorias nas infraestruturas de distribuição para reduzir perdas de energia.',
+  //   },
+  // ];
+
+  return (
+    <InfosDashboar
+      title="Previsão"
+      description="Veja possíveis previsões para sua produção"
+    >
+      <ThemeProvider theme={newTheme}>
+        <div className="flex flex-col md:flex-row gap-5">
+          <CardHome nome="Modelos Preditivos de Produção">
+            {
+              graficoPrditivos && 
+                <LineChart
+                  xAxis={[{ data: graficoPrditivos.xAxis, label: "Anos" }]}
+                  series={graficoPrditivos.series}
+                />
+            }
+          </CardHome>
+
+          <CardHome
+            nome="Simulação de Custo para Períodos de Pico"
+            width="100%"
+          >
+            {
+              dataset && 
+                <BarChart
+                  dataset={dataset}
+                  yAxis={[{ scaleType: "band", dataKey: "month" }]}
+                  series={[
+                    { dataKey: "seoul", label: "Custo de Produção" },
+                  ]}
+                  layout="horizontal"
+                  
+                />
+            }
+          </CardHome>
+        </div>
+
+        <CardHome
+          nome="Sugestões de Otimização de Consumo Energético"
+          height="auto"
+          width="100%"
         >
-            
-        </InfosDashboar>
-     );
+          <div className="px-5">
+            <button
+              onClick={() =>
+                exportToExcel(rows, "Sugestoes_Otimização_Consumo_Energético")
+              }
+              className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white"
+            >
+              Exportar planilha
+              <img className="right-0" src={download} alt="" />
+            </button>
+            <Box sx={{ height: "50vh", width: "100%" }}>
+              {
+                database.rows && 
+                  <DataGrid
+                    rows={database?.rows}
+                    columns={database?.columns}
+                    initialState={{
+                      pagination: {
+                        paginationModel: {
+                          pageSize: 6,
+                        },
+                      },
+                    }}
+                    pageSizeOptions={[5]}
+                    checkboxSelection
+                    disableRowSelectionOnClick
+                  />
+              }
+            </Box>
+          </div>
+        </CardHome>
+      </ThemeProvider>
+    </InfosDashboar>
+  );
 }
 
 export default Previsao;

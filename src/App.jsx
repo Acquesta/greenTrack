@@ -6,9 +6,9 @@ import Footer from "./components/homepage/Footer"
 function App() {
   return (
     <>
-    <Header/>
-    <Outlet/>
-    <Footer/>    
+      <Header/>
+      <Outlet/>
+      <Footer/>    
     </>
     
   )

@@ -12,20 +12,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
-export default function MenuDashboard({ mostraMenu }) {
-
-    const [database, setDatabase ] = useState({})
-
-    useEffect(() => {
-        fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
-        .then(results => results.json())
-        .then(data => setDatabase(data[0]))
-        .catch(error => console.log(error))
-        .finally(() => console.log('Requisição feita'))
-    }, [])
-
-    console.log(database);
-    
+export default function MenuDashboard({ mostraMenu }) {    
   return (
     <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} lg:opacity-100 z-20 fixed w-2/3 max-lg:top-14 lg:fixed bg-[#202731] lg:w-[15vw] h-[100vh] pt-6 text-white lg:flex flex-col justify-between`}>
         <div>

@@ -1,28 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardHome from "../../components/dashboard/CardHome";
 import { LineChart, PieChart } from "@mui/x-charts";
 import { createTheme, ThemeProvider } from "@mui/material";
 import InfosDashboar from "../../components/dashboard/InfosDashboard";
-import { getCarbonEmissions } from "../../services/carbonoAPI.js";
 
 function Eficiencia() {
   const [colorMode, setColorMode] = useState("dark");
 
   const newTheme = createTheme({ palette: { mode: colorMode } });
 
-  const graficoParametro = {
+  const [database, setDatabase ] = useState({})
+
+  useEffect(() => {
+      fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
+      .then(results => results.json())
+      .then(data => setDatabase(data[0].eficiencia))
+      .catch(error => console.log(error))
+      .finally(() => console.log('Requisição feita'))
+  }, [])
+
+  let graficoParametros= database.graficoParametros;
+  let graficoestimativas = database.estimativas;
+  let graficodistribuicao = database.distribuicao;
+
+  const estimativas = {
     series: [
       {
         id: "series-1",
-        data: [3, 4, 1, 6, 5],
-        label: "Hidrogênio Verde",
+        data: graficoestimativas?.custo,
+        label: "Custo",
         highlightScope: {
           highlight: "item",
         },
       },
       {
         id: "series-2",
-        data: [4, 3, 1, 5, 8],
+        data: graficoestimativas?.energia,
         label: "Energia consumida",
         stack: "total",
         highlightScope: {
@@ -41,24 +54,29 @@ function Eficiencia() {
       <ThemeProvider theme={newTheme}>
         <div className="flex flex-col items-center justify-center">
           <CardHome nome="Eficiência Energética" width="100%" height="50vh">
-            <LineChart {...graficoParametro} />
+            {
+              graficoParametros && 
+                <LineChart {...graficoParametros} />
+            }
           </CardHome>
           <div className="flex gap-5 w-full mt-5">
             <CardHome nome="Estimativa de custo" width="100%" height="50vh">
-              <LineChart {...graficoParametro} />
+            {
+              graficoParametros && 
+                <LineChart {...estimativas} />
+            }
             </CardHome>
             <CardHome nome="Eficiência Energética" width="100%" height="50vh">
-              <PieChart
-                series={[
-                  {
-                    data: [
-                      { id: 0, value: 10, label: "H2V" },
-                      { id: 1, value: 15, label: "H2C" },
-                      { id: 2, value: 20, label: "H2A" },
-                    ],
-                  },
-                ]}
-              />
+              {
+                graficodistribuicao &&
+                  <PieChart
+                    series={[
+                      {
+                        data: graficodistribuicao.pieChart,
+                      },
+                    ]}
+                  />
+              }
             </CardHome>
           </div>
         </div>

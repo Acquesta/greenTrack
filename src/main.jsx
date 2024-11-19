@@ -17,6 +17,7 @@ import Sustentabilidade from './pages/Dashboard/Susutentabilidade.jsx'
 import Analise from './pages/Dashboard/Analise.jsx'
 import Login from './pages/Homepage/Login.jsx'
 import Cadastro from './pages/Homepage/Cadastro.jsx'
+import RedefinirSenha from './pages/Homepage/RedefinirSenha.jsx'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       {path: "/Contact", element: <Contact/>},
       {path: "/Login", element: <Login/>},
       {path: "/Cadastro", element: <Cadastro/>},
+      {path: "/RedefinirSenha", element: <RedefinirSenha/>},
       {path: "*", element: <PageNotFound/>}
     ]
   },

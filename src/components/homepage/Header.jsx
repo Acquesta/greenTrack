@@ -45,7 +45,7 @@ export default function Header() {
                             </ul>
                         )}
                     </li>
-                    <li><NavLink to='/Dashboard'>Dashboard</NavLink></li>
+                    <li><NavLink to='/Login'>Dashboard</NavLink></li>
                     <li><NavLink to='/Contact'>Contato</NavLink></li>
                 </ul>
             </nav>

@@ -57,8 +57,11 @@ export default function Header() {
                 <div>
                     {/* <Switch /> */}
                 </div>
+                <div className="align-center px-7 py-3 rounded-full leading-none hover:bg-white hover:text-verde hover:font-medium cursor-pointer">
+                    <Link to='/Login'>Login</Link>
+                </div>
                 <div className="align-center px-7 py-3 rounded-full leading-none bg-azul hover:bg-white hover:text-azul hover:font-medium cursor-pointer">
-                    <Link to='/Login'>LOGIN</Link>
+                    <Link to='/Register'>Registre-se</Link>
                 </div>
             </div>
             <div className="lg:hidden">

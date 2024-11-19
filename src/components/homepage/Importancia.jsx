@@ -147,84 +147,87 @@ function Importancia() {
   return (
     <>
       <div className="relative  bg-verde" id="Importancia">
-        <img src={efeito} alt="efeitos coloridos" className="pointer-events-none z-0 absolute object-cover efeito-imagem" />
+        <img src={efeito} alt="efeitos coloridos" className="pointer-events-none absolute inset-0 object-cover z-0" />
       </div>
 
-      <div className=" w-full text-white">
-        <h1 className="my-16 mx-14 text-6xl uppercase justify-self-center font-medium text-center">Importância</h1>
-        <h1 className="mb-8 mx-14 text-2xl uppercase justify-self-center font-medium text-center">Tipos de energia</h1>
-      </div>
+      <div className="relative z-1 pt-16">
 
-      <div className="flex item-center gap-10 mx-10">
-        <button className="hidden lg:block" onClick={() => scrollDireita('left')}>
-          <img className=" rotate-180 h-40 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
-        </button>
-        <div ref={scrollContainerRef} className=" flex justify-start overflow-scroll gap-10 overflow-y-hidden overflow-x-hidden max-w-[90vw] mx-0 md:mx-auto ">
-
-          {energias.map((energia) => (
-            <CardEnergias
-              titulo={energia.nome}
-              descricao={energia.descricao}
-              beneficios={energia.beneficios}
-              imagem={energia.imagem}
-            />
-          ))}
-
+        <div className=" w-full text-white">
+          <h1 className="my-16 mx-14 text-6xl uppercase justify-self-center font-medium text-center">Importância da transição energética</h1>
+          <h1 className="mb-8 mx-14 text-2xl uppercase justify-self-center font-medium text-center">Tipos de energia</h1>
         </div>
-        <button className="hidden lg:block" onClick={() => scrollDireita('right')}>
-          <img className="h-40 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
-        </button>
-      </div>
 
-      <div className="flex gap-10 justify-center mt-10">
-        <button className="hidden max-lg:block" onClick={() => scrollDireita('left')}>
-          <img className=" rotate-180 h-14 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
-        </button>
-        <button className="hidden max-lg:block" onClick={() => scrollDireita('right')}>
-          <img className="h-14 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
-        </button>
-      </div>
+        <div className="flex item-center gap-10 mx-10">
+          <button className="hidden lg:block" onClick={() => scrollDireita('left')}>
+            <img className=" rotate-180 h-40 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
+          </button>
+          <div ref={scrollContainerRef} className=" flex justify-start overflow-scroll gap-10 overflow-y-hidden overflow-x-hidden max-w-[90vw] mx-0 md:mx-auto ">
 
-      <div className=" w-full text-white">
-        <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Vantagens da transição para um modelo sustentável</h1>
-        <div className="flex gap-6 px-16">
-          {
-            vantagens.map((vantagem) => (
-              <CardInfos
-                nome={vantagem.nome}
-                descricao={vantagem.descricao}
+            {energias.map((energia) => (
+              <CardEnergias
+                titulo={energia.nome}
+                descricao={energia.descricao}
+                beneficios={energia.beneficios}
+                imagem={energia.imagem}
               />
-            ))
-          }
+            ))}
+
+          </div>
+          <button className="hidden lg:block" onClick={() => scrollDireita('right')}>
+            <img className="h-40 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
+          </button>
         </div>
-      </div>
 
-      <div className="w-full text-white">
-        <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Desafios da transição energética</h1>
-        <div className="flex gap-6 px-16">
-          {
-            desafios.map((desafio) => (
-              <CardInfos
-                nome={desafio.nome}
-                descricao={desafio.descricao}
-                fill
-              />
-            ))
-          }
+        <div className="flex gap-10 justify-center mt-10">
+          <button className="hidden max-lg:block" onClick={() => scrollDireita('left')}>
+            <img className=" rotate-180 h-14 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
+          </button>
+          <button className="hidden max-lg:block" onClick={() => scrollDireita('right')}>
+            <img className="h-14 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
+          </button>
         </div>
-      </div>
 
-      <div className=" w-full text-white">
-        <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Oportunidades de desenvolvimento no setor</h1>
-        <div className="flex gap-6 px-16">
-          {
-            oportunidades.map((oportunidade) => (
-              <CardInfos
-                nome={oportunidade.nome}
-                descricao={oportunidade.descricao}
-              />
-            ))
-          }
+        <div className=" w-full text-white">
+          <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Vantagens da transição para um modelo sustentável</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-16">
+            {
+              vantagens.map((vantagem) => (
+                <CardInfos
+                  nome={vantagem.nome}
+                  descricao={vantagem.descricao}
+                />
+              ))
+            }
+          </div>
+        </div>
+
+        <div className="w-full text-white">
+          <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Desafios da transição energética</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-16">
+            {
+              desafios.map((desafio) => (
+                <CardInfos
+                  nome={desafio.nome}
+                  descricao={desafio.descricao}
+                  fill
+                />
+              ))
+            }
+          </div>
+        </div>
+
+        <div className=" w-full text-white">
+          <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Oportunidades de desenvolvimento no setor</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-16">
+            {
+              oportunidades.map((oportunidade) => (
+                <CardInfos
+                  nome={oportunidade.nome}
+                  descricao={oportunidade.descricao}
+                />
+              ))
+            }
+          </div>
         </div>
       </div>
 

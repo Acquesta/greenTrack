@@ -1,6 +1,6 @@
 function CardEnergias({ titulo, descricao, beneficios, imagem}) {
     return ( 
-        <div className="flex flex-col lg:flex-row gap-5">
+        <div className="flex flex-col lg:flex-row gap-5 ">
             <div className="w-full min-h-32 md:w-[40vw] bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${imagem})`}}>
                 
             </div>

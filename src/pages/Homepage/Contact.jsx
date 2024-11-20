@@ -1,7 +1,9 @@
+import ContactMe from "../../components/homepage/ContactMe";
+
 function Contact() {
-    return (  
-        <p>Contato</p>
-    );
+return(
+    <ContactMe/>
+);
 }
 
 export default Contact;

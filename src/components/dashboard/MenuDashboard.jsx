@@ -8,18 +8,19 @@ import arvore from '../../assets/tree.svg'
 import data from '../../assets/clipboard-data.svg'
 
 import greenTrackLogo from '../../assets/greenTrack.svg'
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 
+export default function MenuDashboard({ mostraMenu }) {   
+    
+    const { id } = useParams()
 
-export default function MenuDashboard({ mostraMenu }) {    
   return (
     <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} lg:opacity-100 z-20 fixed w-2/3 max-lg:top-14 lg:fixed bg-[#202731] lg:w-[15vw] h-[100vh] pt-6 text-white lg:flex flex-col justify-between`}>
         <div>
             <NavLink to='/' className="text-2xl font-bold uppercase text-white text-center ">
                 <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[10vw] md:h-[4vw] mx-auto"/>
             </NavLink>
-            <NavLink to='/Dashboard/home' className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
+            <NavLink to={`/Dashboard/${id}/home`} className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
                 <svg
                 width="22"
                 height="22"
@@ -54,32 +55,32 @@ export default function MenuDashboard({ mostraMenu }) {
                     <MenuItem 
                         svg = {relogio}
                         nome = 'Tempo real'
-                        link = '/Dashboard/tempoReal'
+                        link = {`/Dashboard/${id}/tempoReal`}
                     />
                     <MenuItem 
                         svg = {bateria}
                         nome = 'Eficiência'
-                        link = '/Dashboard/eficiencia'
+                        link = {`/Dashboard/${id}/eficiencia`}
                     />
                     <MenuItem 
                         svg = {ferramentas}
                         nome = 'Manutenção'
-                        link = '/Dashboard/manutencao'
+                        link = {`/Dashboard/${id}/manutencao`}
                     />
                     <MenuItem 
                         svg = {data}
                         nome = 'Análise Histórica'
-                        link = '/Dashboard/analise'
+                        link = {`/Dashboard/${id}/analise`}
                     />
                     <MenuItem 
                         svg = {grafico}
                         nome = 'Previsão'
-                        link = '/Dashboard/previsao'
+                        link = {`/Dashboard/${id}/previsao`}
                     />
                     <MenuItem 
                         svg = {arvore}
                         nome = 'Sustentabilidade'
-                        link = '/Dashboard/sustentabilidade'
+                        link = {`/Dashboard/${id}/sustentabilidade`}
                     />
                 </div>
             </div>

@@ -8,8 +8,11 @@ import InfosDashboar from "../../components/dashboard/InfosDashboard";
 import { DataGrid } from "@mui/x-data-grid";
 
 import download from '../../assets/download.svg'
+import { useParams } from "react-router-dom";
 
 function manutencao() {
+
+    const { id } = useParams()
 
     const [colorMode, setColorMode] = useState('dark')
 
@@ -20,7 +23,7 @@ function manutencao() {
     useEffect(() => {
         fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
         .then(results => results.json())
-        .then(data => setDatabase(data[0].manutencao))
+        .then(data => setDatabase(data[id].manutencao))
         .catch(error => console.log(error))
         .finally(() => console.log('Requisição feita'))
     }, [])

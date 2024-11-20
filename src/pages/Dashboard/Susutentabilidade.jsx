@@ -3,8 +3,12 @@ import { useEffect, useState } from "react";
 import InfosDashboar from "../../components/dashboard/InfosDashboard";
 import { BarChart, LineChart, PieChart } from "@mui/x-charts";
 import CardHome from "../../components/dashboard/CardHome";
+import { useParams } from "react-router-dom";
 
 function Sustentabilidade() {
+
+  const { id } = useParams()
+
   const [colorMode, setColorMode] = useState("dark");
 
   const newTheme = createTheme({ palette: { mode: colorMode } });
@@ -14,7 +18,7 @@ function Sustentabilidade() {
   useEffect(() => {
       fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
           .then(results => results.json())
-          .then(data => setDatabase(data[0].sustentabilidade))
+          .then(data => setDatabase(data[id].sustentabilidade))
           .catch(error => console.log(error))
           .finally(() => console.log('Requisição feita'))
   }, [])

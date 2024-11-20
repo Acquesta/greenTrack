@@ -3,8 +3,12 @@ import CardHome from "../../components/dashboard/CardHome";
 import { LineChart, PieChart } from "@mui/x-charts";
 import { createTheme, ThemeProvider } from "@mui/material";
 import InfosDashboar from "../../components/dashboard/InfosDashboard";
+import { useParams } from "react-router-dom";
 
 function Eficiencia() {
+
+  const { id } = useParams()
+
   const [colorMode, setColorMode] = useState("dark");
 
   const newTheme = createTheme({ palette: { mode: colorMode } });
@@ -14,7 +18,7 @@ function Eficiencia() {
   useEffect(() => {
       fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
       .then(results => results.json())
-      .then(data => setDatabase(data[0].eficiencia))
+      .then(data => setDatabase(data[id].eficiencia))
       .catch(error => console.log(error))
       .finally(() => console.log('Requisição feita'))
   }, [])

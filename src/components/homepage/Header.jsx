@@ -54,15 +54,17 @@ export default function Header() {
                 </ul>
             </nav>
             <div className="flex gap-10 items-center">
-                <div>
-                    {/* <Switch /> */}
-                </div>
-                <div className="align-center px-7 py-3 rounded-full leading-none hover:bg-white hover:text-verde hover:font-medium cursor-pointer">
-                    <Link to='/Login'>Login</Link>
-                </div>
-                <div className="align-center px-7 py-3 rounded-full leading-none bg-azul hover:bg-white hover:text-azul hover:font-medium cursor-pointer">
-                    <Link to='/Register'>Registre-se</Link>
-                </div>
+                <Link to='/Login'>
+                    <div className="align-center px-7 py-3 rounded-full leading-none hover:bg-white hover:text-verde hover:font-medium cursor-pointer">
+                        Login
+                    </div>
+                </Link>
+
+                <Link to='/Cadastro'>
+                    <div className="align-center px-7 py-3 rounded-full leading-none bg-azul hover:bg-white hover:text-azul hover:font-medium cursor-pointer">
+                        Registre-se
+                    </div>
+                </Link>
             </div>
             <div className="lg:hidden">
 

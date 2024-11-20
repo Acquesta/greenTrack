@@ -4,8 +4,11 @@ import CardHome from "../../components/dashboard/CardHome";
 import { useEffect, useState } from "react";
 import InfosDashboar from "../../components/dashboard/InfosDashboard";
 import { data } from "autoprefixer";
+import { useParams } from "react-router-dom";
 
 function TempoReal() {
+
+    const { id } = useParams()
 
     const [colorMode, setColorMode] = useState('dark')
 
@@ -16,7 +19,7 @@ function TempoReal() {
     useEffect(() => {
         fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
         .then(results => results.json())
-        .then(data => setDatabase(data[0].tempoReal))
+        .then(data => setDatabase(data[id].tempoReal))
         .catch(error => console.log(error))
         .finally(() => console.log('Requisição feita'))
     }, [])

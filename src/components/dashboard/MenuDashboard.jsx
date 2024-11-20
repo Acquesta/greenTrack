@@ -14,13 +14,20 @@ export default function MenuDashboard({ mostraMenu }) {
     
     const { id } = useParams()
 
+    const usuarios = JSON.parse(localStorage.getItem('Usuarios'))
+
+    const usuario = usuarios[id]
+
+    console.log(usuario);
+    
+
   return (
     <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} lg:opacity-100 z-20 fixed w-2/3 max-lg:top-14 lg:fixed bg-[#202731] lg:w-[15vw] h-[100vh] pt-6 text-white lg:flex flex-col justify-between`}>
         <div>
             <NavLink to='/' className="text-2xl font-bold uppercase text-white text-center ">
                 <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[10vw] md:h-[4vw] mx-auto"/>
             </NavLink>
-            <NavLink to={`/Dashboard/${id}/home`} className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
+            <NavLink to={`/Dashboard/0}/home`} className="my-5 py-3 flex justify-around items-center cursor-pointer bg-gradient-to-r from-[#1EBF49] to-[#315367] hover:to-[#1EBF49] transition-colors">
                 <svg
                 width="22"
                 height="22"
@@ -55,45 +62,46 @@ export default function MenuDashboard({ mostraMenu }) {
                     <MenuItem 
                         svg = {relogio}
                         nome = 'Tempo real'
-                        link = {`/Dashboard/${id}/tempoReal`}
+                        link = {`/Dashboard/0/tempoReal`}
                     />
                     <MenuItem 
                         svg = {bateria}
                         nome = 'Eficiência'
-                        link = {`/Dashboard/${id}/eficiencia`}
+                        link = {`/Dashboard/0/eficiencia`}
                     />
                     <MenuItem 
                         svg = {ferramentas}
                         nome = 'Manutenção'
-                        link = {`/Dashboard/${id}/manutencao`}
+                        link = {`/Dashboard/0/manutencao`}
                     />
                     <MenuItem 
                         svg = {data}
                         nome = 'Análise Histórica'
-                        link = {`/Dashboard/${id}/analise`}
+                        link = {`/Dashboard/0/analise`}
                     />
                     <MenuItem 
                         svg = {grafico}
                         nome = 'Previsão'
-                        link = {`/Dashboard/${id}/previsao`}
+                        link = {`/Dashboard/0/previsao`}
                     />
                     <MenuItem 
                         svg = {arvore}
                         nome = 'Sustentabilidade'
-                        link = {`/Dashboard/${id}/sustentabilidade`}
+                        link = {`/Dashboard/0/sustentabilidade`}
                     />
                 </div>
             </div>
         </div>
-      <div className="bottom-5 flex items-center justify-center gap-5 px-auto py-6 border-t-[1px] border-white">
+      {/* <div className="bottom-5 flex items-center justify-center gap-5 px-auto py-6 border-t-[1px] border-white">
         <div className="w-10 h-10 hidden xl:block bg-slate-300 rounded-full">
-            {/* IMAGEM USUSÁRIO */}
+            
         </div>
         <div>
             <h3 className="text-base font-bold">Lorenzo</h3>
             <h3 className="text-base font-light">Nome da empresa</h3>
         </div>
-      </div>
+      </div> 
+      */}
     </div>
   );
 }

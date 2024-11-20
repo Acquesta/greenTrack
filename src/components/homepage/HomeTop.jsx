@@ -22,9 +22,9 @@ function HomeTop() {
             <div className="relative text-white w-full">
                 <h1 className="font-bold text-7xl sm:text-9xl uppercase text-center mb-10 mx-14">Green Track</h1>
                 <p className="text-center text-2xl mx-10 ">Investir em energia sustentável é iluminar o presente sem apagar o futuro.</p>
-                <button className="bg-verde bg-gradient-to-br from-verdeescuro/50 via-verde to-verdeescuro/50 py-4 px-8 text-white rounded-xl flex justify-self-center text-2xl mt-12 hover:text-verde hover:font-bold hover:bg-gradient hover:from-white hover:to-white">
+                <a className="bg-verde bg-gradient-to-br from-verdeescuro/50 via-verde to-verdeescuro/50 py-4 px-8 text-white rounded-xl flex justify-self-center text-2xl mt-12 hover:text-verde hover:font-bold hover:bg-gradient hover:from-white hover:to-white" href="#Dores">
                     CONHEÇA
-                </button>
+                </a>
 
             </div>
         </div>

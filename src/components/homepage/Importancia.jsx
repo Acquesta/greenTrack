@@ -27,10 +27,13 @@ function Importancia() {
 
   useEffect(() => {
     if (scrollContainerRef.current) {
-      const { width, height } = scrollContainerRef.current.getBoundingClientRect();
-      setDivSize({ width, height });
+        const card = scrollContainerRef.current.firstChild;
+        if (card) {
+            const { width } = card.getBoundingClientRect();
+            setDivSize({ width });
+        }
     }
-  }, []);
+});
 
   console.log(divSize)
 
@@ -157,11 +160,11 @@ function Importancia() {
           <h1 className="mb-8 mx-14 text-2xl uppercase justify-self-center font-medium text-center">Tipos de energia</h1>
         </div>
 
-        <div className="flex item-center gap-10 mx-10">
+        <div className="flex item-center mx-10">
           <button className="hidden lg:block" onClick={() => scrollDireita('left')}>
             <img className=" rotate-180 h-40 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
           </button>
-          <div ref={scrollContainerRef} className=" flex justify-start overflow-scroll gap-10 overflow-y-hidden overflow-x-hidden max-w-[90vw] mx-0 md:mx-auto ">
+          <div ref={scrollContainerRef} className=" flex justify-start overflow-scroll overflow-y-hidden overflow-x-hidden max-w-[90vw] mx-0 md:mx-auto ">
 
             {energias.map((energia) => (
               <CardEnergias

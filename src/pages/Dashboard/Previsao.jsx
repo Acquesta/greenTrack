@@ -16,9 +16,9 @@ function Previsao() {
 
   const { id } = useParams()
 
-  const [colorMode, setColorMode] = useState("dark");
+  const [themeMode, setThemeMode] = useState(JSON.parse(localStorage.getItem('tema')))
 
-  const newTheme = createTheme({ palette: { mode: colorMode } });
+  const newTheme = createTheme({ palette: { mode: themeMode } });
 
   const [database, setDatabase] = useState({})
 
@@ -29,6 +29,14 @@ function Previsao() {
           .catch(error => console.log(error))
           .finally(() => console.log('Requisição feita'))
   }, [])
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+        setThemeMode(JSON.parse(localStorage.getItem('tema')))
+    }, 2000); 
+
+    return () => clearInterval(intervalId);
+}, []);
 
   let graficoPrditivos = database.lineChart;
   let dataset = database.dataset;
@@ -169,10 +177,11 @@ function Previsao() {
     <InfosDashboar
       title="Previsão"
       description="Veja possíveis previsões para sua produção"
+      themeMode={themeMode}
     >
       <ThemeProvider theme={newTheme}>
         <div className="flex flex-col md:flex-row gap-5">
-          <CardHome nome="Modelos Preditivos de Produção">
+          <CardHome nome="Modelos Preditivos de Produção" themeMode={themeMode}>
             {
               graficoPrditivos && 
                 <LineChart
@@ -185,6 +194,7 @@ function Previsao() {
           <CardHome
             nome="Simulação de Custo para Períodos de Pico"
             width="100%"
+            themeMode={themeMode}
           >
             {
               dataset && 
@@ -205,6 +215,7 @@ function Previsao() {
           nome="Sugestões de Otimização de Consumo Energético"
           height="auto"
           width="100%"
+          themeMode={themeMode}
         >
           <div className="px-5">
             <button

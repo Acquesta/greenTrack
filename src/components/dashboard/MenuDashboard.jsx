@@ -91,7 +91,7 @@ export default function MenuDashboard({ mostraMenu, themeMode }) {
         colors.fundo
       } lg:w-[15vw] h-[100vh] pt-6 text-${
         colors.texto
-      } lg:flex flex-col justify-between`}
+      } lg:flex flex-col justify-between shadow-md`}
     >
       <div>
         <NavLink
@@ -120,7 +120,7 @@ export default function MenuDashboard({ mostraMenu, themeMode }) {
               fill="white"
             />
           </svg>
-          <h3 className="text-xl text-white">Dashboard</h3>
+          <h3 className={`text-xl text-white`}>Dashboard</h3>
           <svg
             width="16"
             height="16"

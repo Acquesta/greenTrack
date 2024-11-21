@@ -3,7 +3,7 @@ import CardHome from "../../components/dashboard/CardHome";
 import { LineChart } from '@mui/x-charts/LineChart';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import aviso from '../../assets/exclamation.svg';
 import setaDireita from '../../assets/setaDireita.svg';
@@ -69,19 +69,28 @@ function HomeDashboard() {
         },
     ]
 
-    const [colorMode, setColorMode] = useState('dark')
+    const [themeMode, setThemeMode] = useState(JSON.parse(localStorage.getItem('tema')))
 
-    const newTheme = createTheme({ palette: { mode: colorMode } });
+    const newTheme = createTheme({ palette: { mode: themeMode } });
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setThemeMode(JSON.parse(localStorage.getItem('tema')))
+        }, 1000); 
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     return ( 
         <>
         <InfosDashboar 
             title='Dashboard'
             description='Bem-vindo ao seu dashboard'
+            themeMode={themeMode}
         >
 
                 <div className="flex flex-col lg:flex-row gap-5 justify-between">
-                    <CardHome nome='Consumo Último mês'>
+                    <CardHome nome='Consumo Último mês' themeMode={themeMode}>
                         <ThemeProvider theme={newTheme}>
                             <LineChart
                                 yAxis={[{ label: 'mAh' }]}
@@ -102,10 +111,10 @@ function HomeDashboard() {
                             />
                         </ThemeProvider>
                     </CardHome>
-                    <CardHome nome='Notificações' >
+                    <CardHome nome='Notificações' themeMode={themeMode} >
                         {
                             notificacoes.map((notificacao) => (
-                                <div key={notificacao.id} className="flex justify-evenly items-center bg-[#415572] rounded-md mx-3 py-3 cursor-pointer hover:opacity-80">
+                                <div key={notificacao.id} className={`flex justify-evenly items-center bg-[#415572]  rounded-md mx-3 py-3 cursor-pointer`}>
                                     <img src={aviso} alt="icone de aviso branco" />
                                     <h3 className="text-base font-semibold text-white uppercase">{notificacao.title}</h3>
                                     <img src={setaDireita} alt="icone de aviso branco" />
@@ -119,13 +128,13 @@ function HomeDashboard() {
                     <div className="flex flex-col md:flex-row justify-between gap-4 my-5">
                         {
                             facilidades.map((facilidade) => (
-                                <div key={facilidade.id} className="md:w-1/2 bg-[#202731] px-3 flex flex-col justify-between gap-2 rounded-lg py-5">
-                                    <h2 className="text-white text-xs font-bold lg:text-xl">{facilidade.title}</h2>
+                                <div key={facilidade.id} className={`md:w-1/2 bg-${themeMode == 'dark' ? '[#202731]' : 'white'} shadow-md px-3 flex flex-col justify-between gap-2 rounded-lg py-5`}>
+                                    <h2 className={`text-${themeMode == 'dark' ? 'white' : 'fundo'} text-xs font-bold lg:text-xl`}>{facilidade.title}</h2>
                                     {
                                         facilidade.type === 'default' ? (
                                             <>
                                                 <p className="text-[#1EBF49] text-3xl font-bold lg:text-5xl">{facilidade.description}</p>
-                                                <div className="flex justify-between items-center text-xs text-white font-light lg:text-base">
+                                                <div className={`flex justify-between items-center text-xs text-${themeMode == 'dark' ? 'white' : 'fundo'} font-light lg:text-base`}>
                                                     <p>{facilidade.infos.porcentagem}</p>
                                                     <p className="text-center">{facilidade.infos.descricao}</p>
                                                 </div>
@@ -135,11 +144,11 @@ function HomeDashboard() {
                                                 <ThemeProvider theme={newTheme}>
                                                     <Gauge width={100} height={100} value={70} />
                                                 </ThemeProvider>
-                                                <p className="text-center text-white" >{facilidade.infos.descricao}</p>
+                                                <p className={`text-center text-${themeMode == 'dark' ? 'white' : 'fundo'}`} >{facilidade.infos.descricao}</p>
                                             </div>
                                         ) : (
                                             <>
-                                                <div className="flex flex-col gap-3 justify-between items-center text-xs text-white font-light lg:text-base">
+                                                <div className={`flex flex-col gap-3 justify-between items-center text-xs text-${themeMode == 'dark' ? 'white' : 'fundo'} font-light lg:text-base`}>
                                                     <p className="w-full text-[#1EBF49] text-3xl font-bold lg:text-5xl">{facilidade.infos.porcentagem}</p>
                                                     <p className="text-center">{facilidade.infos.descricao}</p>
                                                     <p className="w-full text-[#1EBF49] text-end text-3xl font-bold lg:text-5xl">{facilidade.infos.previsao}</p>

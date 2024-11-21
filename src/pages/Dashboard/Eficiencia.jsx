@@ -9,9 +9,9 @@ function Eficiencia() {
 
   const { id } = useParams()
 
-  const [colorMode, setColorMode] = useState("dark");
+  const [themeMode, setThemeMode] = useState(JSON.parse(localStorage.getItem('tema')))
 
-  const newTheme = createTheme({ palette: { mode: colorMode } });
+  const newTheme = createTheme({ palette: { mode: themeMode } });
 
   const [database, setDatabase ] = useState({})
 
@@ -22,6 +22,14 @@ function Eficiencia() {
       .catch(error => console.log(error))
       .finally(() => console.log('Requisição feita'))
   }, [])
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+        setThemeMode(JSON.parse(localStorage.getItem('tema')))
+    }, 2000); 
+
+    return () => clearInterval(intervalId);
+}, []);
 
   let graficoParametros= database.graficoParametros;
   let graficoestimativas = database.estimativas;
@@ -54,23 +62,24 @@ function Eficiencia() {
     <InfosDashboar
       title="Eficiência"
       description="Acompanhe a eficiência da sua produção"
+      themeMode={themeMode}
     >
       <ThemeProvider theme={newTheme}>
         <div className="flex flex-col items-center justify-center">
-          <CardHome nome="Eficiência Energética" width="100%" height="50vh">
+          <CardHome nome="Eficiência Energética" width="100%" height="50vh" themeMode={themeMode}>
             {
               graficoParametros && 
                 <LineChart {...graficoParametros} />
             }
           </CardHome>
           <div className="flex gap-5 w-full mt-5">
-            <CardHome nome="Estimativa de custo" width="100%" height="50vh">
+            <CardHome nome="Estimativa de custo" width="100%" height="50vh" themeMode={themeMode}>
             {
               graficoParametros && 
                 <LineChart {...estimativas} />
             }
             </CardHome>
-            <CardHome nome="Eficiência Energética" width="100%" height="50vh">
+            <CardHome nome="Eficiência Energética" width="100%" height="50vh" themeMode={themeMode}>
               {
                 graficodistribuicao &&
                   <PieChart

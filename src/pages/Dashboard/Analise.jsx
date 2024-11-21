@@ -83,7 +83,7 @@ function Analise() {
                             </Box>
                         </div>
                     </CardHome>
-                    <CardHome nome='Relatórios de Desempenho' height="auto">
+                    <CardHome nome='Relatórios de Desempenho' height="auto" themeMode={themeMode}>
                         <div className="px-5">
                             <button onClick={() => exportToExcel(database?.rows2, 'Relatorios_Desempenho')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
                                 Exportar planilha
@@ -107,7 +107,7 @@ function Analise() {
                             </Box>
                         </div>
                     </CardHome>
-                    <CardHome nome='Estatísticas de Economia de Emissões' height="auto">
+                    <CardHome nome='Estatísticas de Economia de Emissões' height="auto" themeMode={themeMode}>
                         <div className="px-5">
                             <button onClick={() => exportToExcel(database?.rows3, 'Estatisticas_Economia_Emissoes')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
                                 Exportar planilha

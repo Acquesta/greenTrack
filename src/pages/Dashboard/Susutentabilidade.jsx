@@ -9,9 +9,9 @@ function Sustentabilidade() {
 
   const { id } = useParams()
 
-  const [colorMode, setColorMode] = useState("dark");
+  const [themeMode, setThemeMode] = useState(JSON.parse(localStorage.getItem('tema')))
 
-  const newTheme = createTheme({ palette: { mode: colorMode } });
+  const newTheme = createTheme({ palette: { mode: themeMode } });
 
   const [database, setDatabase] = useState({})
 
@@ -23,6 +23,14 @@ function Sustentabilidade() {
           .finally(() => console.log('Requisição feita'))
   }, [])
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+        setThemeMode(JSON.parse(localStorage.getItem('tema')))
+    }, 2000); 
+
+    return () => clearInterval(intervalId);
+}, []);
+
   let graficoPies = database.pies;
   let graficoLineChat1 = database.lineChart1;
   let graficoLineChat2 = database.lineChart2;
@@ -33,10 +41,11 @@ function Sustentabilidade() {
     <InfosDashboar
       title="Sustentabilidade"
       description="Quanto seu projeto economiza"
+      themeMode={themeMode}
     >
       <ThemeProvider theme={newTheme}>
         <div className="flex flex-col md:flex-row gap-5">
-          <CardHome nome="Indicadores Ambientais">
+          <CardHome nome="Indicadores Ambientais" themeMode={themeMode}>
             {
               graficoPies && 
                 <PieChart
@@ -48,7 +57,7 @@ function Sustentabilidade() {
                 />
             }
           </CardHome>
-          <CardHome nome="Carbono economizado">
+          <CardHome nome="Carbono economizado" themeMode={themeMode}>
             {
               database.series && 
                 <BarChart
@@ -60,7 +69,7 @@ function Sustentabilidade() {
             }
           </CardHome>
         </div>
-        <CardHome nome="Gráficos de Comparação com Outros Combustíveis">
+        <CardHome nome="Gráficos de Comparação com Outros Combustíveis" themeMode={themeMode}>
           {
             graficoLineChat1 &&
               <LineChart
@@ -74,7 +83,7 @@ function Sustentabilidade() {
               />
           }
         </CardHome>
-        <CardHome nome="Pontos de carbono">
+        <CardHome nome="Pontos de carbono" themeMode={themeMode}>
           {
             graficoLineChat2 &&
               <LineChart

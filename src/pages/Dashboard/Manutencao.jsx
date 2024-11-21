@@ -14,9 +14,9 @@ function manutencao() {
 
     const { id } = useParams()
 
-    const [colorMode, setColorMode] = useState('dark')
+    const [themeMode, setThemeMode] = useState(JSON.parse(localStorage.getItem('tema')))
 
-    const newTheme = createTheme({ palette: { mode: colorMode } });
+    const newTheme = createTheme({ palette: { mode: themeMode } });
 
     const [database, setDatabase ] = useState({})
 
@@ -27,6 +27,14 @@ function manutencao() {
         .catch(error => console.log(error))
         .finally(() => console.log('Requisição feita'))
     }, [])
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setThemeMode(JSON.parse(localStorage.getItem('tema')))
+        }, 2000); 
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     let graficoCriticos = database.monitoramentoComponentesCriticos;
     let graficoFalhasAnomalias = database.falhasAnomalias;
@@ -46,9 +54,10 @@ function manutencao() {
         <InfosDashboar
             title='Manutenção'
             description='Acompanhe a eficiência da sua produção'
+            themeMode={themeMode}
         >
             <ThemeProvider theme={newTheme} >
-                <CardHome nome='Monitoramento de Componentes Críticos' height="auto">
+                <CardHome nome='Monitoramento de Componentes Críticos' height="auto" themeMode={themeMode}>
                     <div className="px-5">
                         <button onClick={() => exportToExcel(rows, 'Monitoramento_Componentes_Criticos')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
                             Exportar planilha
@@ -76,7 +85,7 @@ function manutencao() {
                     </div>
                 </CardHome>
 
-                <CardHome nome='Falhas e Anomalias' height="auto">
+                <CardHome nome='Falhas e Anomalias' height="auto" themeMode={themeMode}>
                     <div className="px-5">
                         <button onClick={() => exportToExcel(rows2, 'Falhas_Anomalias')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
                             Exportar planilha

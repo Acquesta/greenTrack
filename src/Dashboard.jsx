@@ -30,7 +30,7 @@ function Dashboard() {
     }
 
     return (
-        <div className={`bg-[${themeMode == 'light' ? '#ECECEC' : '#141619'}] transition-all`}>
+        <div className={`bg-${themeMode == 'light' ? '[#ECECEC]' : 'fundo'} transition-all`}>
             <MenuDashboard themeMode={themeMode} mostraMenu={menu}/>
             <MenuHeader trocaTema={trocaTema} handleMenu={handleMenu} themeMode={themeMode} />
             <Outlet />

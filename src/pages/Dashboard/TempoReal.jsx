@@ -10,9 +10,9 @@ function TempoReal() {
 
     const { id } = useParams()
 
-    const [colorMode, setColorMode] = useState('dark')
+    const [themeMode, setThemeMode] = useState(JSON.parse(localStorage.getItem('tema')))
 
-    const newTheme = createTheme({ palette: { mode: colorMode } });
+    const newTheme = createTheme({ palette: { mode: themeMode } });
 
     const [database, setDatabase ] = useState({})
 
@@ -23,6 +23,14 @@ function TempoReal() {
         .catch(error => console.log(error))
         .finally(() => console.log('Requisição feita'))
     }, [])
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setThemeMode(JSON.parse(localStorage.getItem('tema')))
+        }, 2000); 
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     let graficoProducao = database.producao;
     let graficoConsumo = database.consumo;
@@ -38,9 +46,10 @@ function TempoReal() {
         <InfosDashboar
             title="Tempo Real"
             description='Visualize seus dados ao vivo'
+            themeMode={themeMode}
         >
             <div className="flex flex-col items-center justify-center">
-                <CardHome nome='Produção de H2V em litros' height='20vh'>
+                <CardHome nome='Produção de H2V em litros' height='20vh' themeMode={themeMode}>
                     {
                         graficoProducao && 
                             <Box sx={{ flexGrow: 1 }}>
@@ -61,14 +70,14 @@ function TempoReal() {
                     <div className="w-full mt-10 flex gap-4 max-lg:flex-col">
                         {
                             graficoConsumo && 
-                                <CardHome nome='Consumo de Energia (mAh)' width="100%">
+                                <CardHome nome='Consumo de Energia (mAh)' width="100%" themeMode={themeMode}>
                                     <BarChart
                                         xAxis={[{ scaleType: 'band', data: graficoConsumo.meses }]}
                                         series={graficoConsumo.colunas}
                                     />
                                 </CardHome>
                         }
-                        <CardHome nome='Pressão' width="100%">
+                        <CardHome nome='Pressão' width="100%" themeMode={themeMode}>
                             <Gauge
                                 value={graficoPressao ? graficoPressao.valor : 0}
                                 startAngle={-110}
@@ -86,7 +95,7 @@ function TempoReal() {
                         </CardHome>
                     </div>
                     <div className="w-full mt-10 flex gap-4 max-lg:flex-col">
-                        <CardHome nome='Temperatura (C°)' width="100%">
+                        <CardHome nome='Temperatura (C°)' width="100%" themeMode={themeMode}>
                             <Gauge
                                 value={graficoTemperatura ? graficoTemperatura.valor : 0}
                                 startAngle={-110}
@@ -104,7 +113,7 @@ function TempoReal() {
                         </CardHome>
                         {
                             graficoPureza && 
-                                <CardHome nome='Pureza do hidrogênio' width="100%">
+                                <CardHome nome='Pureza do hidrogênio' width="100%" themeMode={themeMode}>
                                     <LineChart
                                         xAxis={[{ data: graficoPureza.xAxis }]}
                                         series={[
@@ -120,7 +129,7 @@ function TempoReal() {
                     <div className="mt-10 w-full">
                         {
                             graficoRenovavel && 
-                                <CardHome nome='Energia Renovável'>
+                                <CardHome nome='Energia Renovável' themeMode={themeMode}>
                                     <LineChart
                                         xAxis={[{ data: graficoRenovavel.xAxis }]}
                                         series={[

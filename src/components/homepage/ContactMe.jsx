@@ -3,7 +3,7 @@ import imagem from '../../assets/greentrack-contact.jpg';
 function ContactMe() {
     return (
         <>
-            <div className="h-screen flex flex-col  md:flex-row items-center ">
+            <div className="h-full md:h-screen flex flex-col  md:flex-row items-center ">
                 <div 
                     style={{ backgroundImage: `url(${imagem})` }} 
                     className="hidden md:block h-full w-full md:w-[40vw] bg-center bg-cover rounded-tl-2xl md:rounded-tr-none"

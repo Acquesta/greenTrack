@@ -1,6 +1,6 @@
 function Sugestoes() {
     return (
-        <div className="min-h-screen text-white" id="Sugestoes">
+        <div className="min-h-screen pt-24 text-white" id="Sugestoes">
             <h1 className="my-10 mx-6 sm:mx-14 text-3xl sm:text-6xl uppercase justify-self-center font-medium text-center">
                 Sugestões para <em>reduzir</em> consumo de energia
             </h1>
@@ -12,10 +12,10 @@ function Sugestoes() {
                     allowFullScreen
                 ></iframe>
             </div>
-            <div className="mt-12 px-6 sm:px-14 flex flex-col md:flex-row items-center justify-center">
-                <h1 className="text-xl sm:text-3xl font-semibold mb-6 uppercase text-center">
+            <div className="my-12 px-6 sm:px-14 flex flex-col md:flex-row items-center justify-center">
+                <h2 className="text-xl sm:text-3xl font-semibold mb-6 uppercase text-center">
                     Apoie empresas que investem em <strong className="text-azul">sustentabilidade 🌎</strong>
-                </h1>
+                </h2>
                 <ul className="list-disc pl-6 sm:pl-10 space-y-4">
                     <li>
                         Escolha produtos de marcas que utilizem fontes renováveis em suas operações. Por exemplo, empresas que fabricam

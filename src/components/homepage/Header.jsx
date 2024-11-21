@@ -54,15 +54,17 @@ export default function Header() {
                     <li><NavLink to='/Contact'>Contato</NavLink></li>
                 </ul>
             </nav>
-            <div className="flex gap-10 items-center">
+            <div className="gap-10 items-center hidden lg:flex">
                 <Link to='/Login'>
-                    <div className="align-center px-7 py-3 rounded-full leading-none hover:bg-white hover:text-verde hover:font-medium cursor-pointer">
+                    <div className=" flex gap-4 items-center px-7 py-3 rounded-full leading-none hover:bg-white hover:text-verde hover:font-medium cursor-pointer">
+                    <Icon.UserCheck/>
                         Login
                     </div>
                 </Link>
 
                 <Link to='/Cadastro'>
-                    <div className="align-center px-7 py-3 rounded-full leading-none bg-azul hover:bg-white hover:text-azul hover:font-medium cursor-pointer">
+                    <div className=" flex gap-4 items-center px-7 py-3 rounded-full leading-none bg-azul hover:bg-white hover:text-azul hover:font-medium cursor-pointer">
+                    <Icon.UserPlus/>
                         Registre-se
                     </div>
                 </Link>

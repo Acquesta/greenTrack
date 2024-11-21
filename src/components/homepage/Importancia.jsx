@@ -153,11 +153,11 @@ function Importancia() {
         <img src={efeito} alt="efeitos coloridos" className="pointer-events-none absolute inset-0 object-cover z-0" />
       </div>
 
-      <div className="relative z-1 pt-16">
+      <div className="relative z-1 pt-24">
 
         <div className=" w-full text-white">
-          <h1 className="my-16 mx-14 text-6xl uppercase justify-self-center font-medium text-center">Importância da transição energética</h1>
-          <h1 className="mb-8 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Tipos de energia</h1>
+          <h1 className="my-16 mx-14 text-4xl  md:text-6xl uppercase justify-self-center font-medium text-center">Importância da transição energética</h1>
+          <h2 className="mb-8 mx-5 sm:mx-14 text-3xl uppercase justify-self-center font-medium text-center">Tipos de energia</h2>
         </div>
 
         <div className="flex item-center mx-10">
@@ -191,8 +191,8 @@ function Importancia() {
         </div>
 
         <div className=" w-full text-white">
-          <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Vantagens da transição para um modelo sustentável</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-16">
+          <h2 className="my-16 mx-5 sm:mx-14 text-3xl uppercase justify-self-center font-medium text-center">Vantagens da transição para um modelo sustentável</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
             {
               vantagens.map((vantagem) => (
                 <CardInfos
@@ -205,8 +205,8 @@ function Importancia() {
         </div>
 
         <div className="w-full text-white">
-          <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Desafios da transição energética</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-16">
+          <h2 className="my-16 mx-5 sm:mx-14 text-3xl uppercase justify-self-center font-medium text-center">Desafios da transição energética</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
             {
               desafios.map((desafio) => (
                 <CardInfos
@@ -220,8 +220,8 @@ function Importancia() {
         </div>
 
         <div className=" w-full text-white">
-          <h1 className="my-16 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Oportunidades de desenvolvimento no setor</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-16">
+          <h2 className="my-16 mx-5 sm:mx-14 text-3xl uppercase justify-self-center font-medium text-center">Oportunidades de desenvolvimento no setor</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
             {
               oportunidades.map((oportunidade) => (
                 <CardInfos

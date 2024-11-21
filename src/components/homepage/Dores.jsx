@@ -1,8 +1,8 @@
 function Dores() {
     return (
-        <div className="h-auto mt-36 pt-36 md:pt-26 items-center text-white gap-5" id="Dores">
+        <div className="h-auto pt-24 md:pt-26 items-center text-white gap-5" id="Dores">
             <div className=" w-full">
-                <h1 className="my-10 mx-14 text-6xl uppercase justify-self-center font-medium text-center">DESAFIOS DA CRISE ENERGÉTICA</h1>
+                <h1 className="my-10 mx-14 text-4xl  md:text-6xl uppercase justify-self-center font-medium text-center">DESAFIOS DA CRISE ENERGÉTICA</h1>
             </div>
             <div className="grid mx-16 my-10 text-xl grid-cols-1 lg:grid-cols-3 text-center gap-6">
                 <div className="md:px-10 ">

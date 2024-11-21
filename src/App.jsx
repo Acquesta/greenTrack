@@ -5,11 +5,11 @@ import Footer from "./components/homepage/Footer"
 
 function App() {
   return (
-    <>
+    <div className="bg-fundo">
       <Header/>
       <Outlet/>
       <Footer/>    
-    </>
+    </div>
     
   )
 }

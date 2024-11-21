@@ -13,10 +13,26 @@ function Dashboard() {
         menu ? setMenu(false) : setMenu(true)
     }
 
+    const temaAntigo = JSON.parse(localStorage.getItem('tema')) || 'dark'
+    const [themeMode, setThemeMode] = useState(temaAntigo)
+    localStorage.setItem('tema', JSON.stringify(themeMode))
+
+    const trocaTema = () => {
+        if (themeMode === 'dark'){
+            setThemeMode('light') 
+            localStorage.setItem('tema', JSON.stringify('light')) 
+        } 
+        else {
+            setThemeMode('dark')
+            localStorage.setItem('tema', JSON.stringify('dark'))
+        } 
+        console.log(themeMode);
+    }
+
     return (
-        <div className="bg-[#141619] transition-all">
-            <MenuDashboard mostraMenu={menu}/>
-            <MenuHeader handleMenu={handleMenu} />
+        <div className={`bg-[${themeMode == 'light' ? '#ECECEC' : '#141619'}] transition-all`}>
+            <MenuDashboard themeMode={themeMode} mostraMenu={menu}/>
+            <MenuHeader trocaTema={trocaTema} handleMenu={handleMenu} themeMode={themeMode} />
             <Outlet />
         </div>
     );

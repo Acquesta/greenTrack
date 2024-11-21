@@ -13,7 +13,9 @@ import { useParams } from "react-router-dom";
 
 function Analise() {
 
-    const [colorMode, setColorMode] = useState('dark')
+
+
+    const [colorMode, setColorMode] = useState(JSON.parse(localStorage.getItem('tema')))
 
     const newTheme = createTheme({ palette: { mode: colorMode } });
 

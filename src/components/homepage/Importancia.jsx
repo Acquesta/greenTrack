@@ -157,7 +157,7 @@ function Importancia() {
 
         <div className=" w-full text-white">
           <h1 className="my-16 mx-14 text-6xl uppercase justify-self-center font-medium text-center">Importância da transição energética</h1>
-          <h1 className="mb-8 mx-14 text-2xl uppercase justify-self-center font-medium text-center">Tipos de energia</h1>
+          <h1 className="mb-8 mx-14 text-3xl uppercase justify-self-center font-medium text-center">Tipos de energia</h1>
         </div>
 
         <div className="flex item-center mx-10">

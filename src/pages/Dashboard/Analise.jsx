@@ -15,13 +15,21 @@ function Analise() {
 
 
 
-    const [colorMode, setColorMode] = useState(JSON.parse(localStorage.getItem('tema')))
+    const [themeMode, setThemeMode] = useState(JSON.parse(localStorage.getItem('tema')))
 
-    const newTheme = createTheme({ palette: { mode: colorMode } });
+    const newTheme = createTheme({ palette: { mode: themeMode } });
 
     const [database, setDatabase] = useState({})
 
     const { id } = useParams()
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setThemeMode(JSON.parse(localStorage.getItem('tema')))
+        }, 2000); 
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     useEffect(() => {
         fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
@@ -42,6 +50,7 @@ function Analise() {
         XLSX.writeFile(workbook, `${fileName}.xlsx`);
     };
 
+    
     return (
         <InfosDashboar
             title='Análise Histórica e Relatórios'
@@ -50,7 +59,7 @@ function Analise() {
             {
                 database.rows &&
                 <ThemeProvider theme={newTheme} >
-                    <CardHome nome='Histórico de Produção e Consumo' height="auto">
+                    <CardHome nome='Histórico de Produção e Consumo' height="auto" themeMode={themeMode}>
                         <div className="px-5">
                             <button onClick={() => exportToExcel(database?.rows, 'Historico_Producao_Consumo')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
                                 Exportar planilha

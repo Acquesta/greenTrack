@@ -29,28 +29,33 @@ function Cadastro() {
     };
 
     const cadastrarUsuario = () => {
+        const usuario =  {
+            nome: inputs[0].value,
+            email: inputs[1].value,
+            senha: inputs[2].value,
+        }
+
         if (inputs.some((input) => input.value.trim() === "")) {
             alert("Preencha todos os campos.");
             return;
         }
+
         if (inputs[2].value !== inputs[3].value) {
             alert("Senhas não coincidem.");
             return;
         }
+
         if (!verificaUsuario(inputs[1].value)) {
             const usuariosCadastrados = puxaUsuarios();
             localStorage.setItem(
                 "Usuarios",
                 JSON.stringify([
                     ...usuariosCadastrados,
-                    {
-                        nome: inputs[0].value,
-                        email: inputs[1].value,
-                        senha: inputs[2].value,
-                    },
+                   usuario
                 ])
             );
             alert("Usuário cadastrado com sucesso!");
+            localStorage.setItem('user', JSON.stringify(usuario));
             navigate(`/Dashboard/${usuariosCadastrados.length}/home`)
         } else {
             alert("Usuário já existe.");

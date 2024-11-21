@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Inputs from "../../components/homepage/Inputs";
 import { useNavigate } from "react-router-dom";
+import { parse } from "postcss";
 
 function Login() {
+
     const navigate = useNavigate()
+
     const [inputs, setInputs] = useState([
         { id: 1, label: "Email", type: "email", value: "" },
         { id: 2, label: "Senha", type: "password", value: "" },
@@ -37,10 +40,24 @@ function Login() {
         if (usuario) {
             alert("Login bem-sucedido!");
             navigate(`/Dashboard/${usuariosCadastrados.indexOf(usuario)}/home`)
+            localStorage.setItem('user', JSON.stringify(usuario));
         } else {
             alert("Email ou senha incorretos.");
         }
     };
+
+    const pegaIdUser = (usuario) => {
+        const usuariosCadastrados = puxaUsuarios()
+        const usuarioIndex = usuariosCadastrados.findIndex(
+            (u) => u.email === usuario.email
+        );
+        return usuarioIndex
+    }
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'))
+        if (user) navigate(`/Dashboard/${pegaIdUser(user)}/home`)
+    }, [])
 
     return (
         <Inputs

@@ -51,7 +51,7 @@ function Cadastro() {
                 ])
             );
             alert("Usuário cadastrado com sucesso!");
-            navigate("/Dashboard/0/home")
+            navigate(`/Dashboard/${usuariosCadastrados.length}/home`)
         } else {
             alert("Usuário já existe.");
         }

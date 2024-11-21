@@ -6,7 +6,7 @@ import imagem from '../../assets/greenTrackLogin.jpg'
 
 function Inputs({ titulo, descricao, inputs, botao, outraPagina = ['' ,''], mudaValue, funcao}) {
     return ( 
-        <div className="flex items-center h-screen">
+        <div className="flex items-center">
             <div style={{backgroundImage: `URL(${imagem})`}} className="hidden xl:block h-screen w-[30vw] bg-center bg-cover">
                 
             </div>
@@ -16,7 +16,7 @@ function Inputs({ titulo, descricao, inputs, botao, outraPagina = ['' ,''], muda
             <div className="absolute right-[20vw] bottom-[10vh] h-[10vw] w-[10vw] bg-gradient-to-b from-[#00611B] to-[#2B4A61] rounded-full">
                 
             </div>
-            <div className="z-10 w-2/3 xl:w-1/4 mx-auto pt-20 pb-10 px-10 backdrop-blur-lg border border-white rounded-lg shadow-xl">
+            <div className="w-2/3 xl:w-1/4 mx-auto flex flex-col justify-evenly my-[25vh] pt-5 pb-10 px-10 backdrop-blur-lg border border-white rounded-lg shadow-xl">
                 <h2 className="text-white text-4xl">{titulo}</h2>
                 <p className="text-white font-light">{descricao}</p>
                 <div className="flex flex-col gap-5 mt-10">

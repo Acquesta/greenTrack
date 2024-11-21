@@ -25,7 +25,7 @@ function Previsao() {
   useEffect(() => {
       fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
           .then(results => results.json())
-          .then(data => setDatabase(data[id].previsao))
+          .then(data => setDatabase(data[0].previsao))
           .catch(error => console.log(error))
           .finally(() => console.log('Requisição feita'))
   }, [])

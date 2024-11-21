@@ -19,7 +19,7 @@ function TempoReal() {
     useEffect(() => {
         fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
         .then(results => results.json())
-        .then(data => setDatabase(data[id].tempoReal))
+        .then(data => setDatabase(data[0].tempoReal))
         .catch(error => console.log(error))
         .finally(() => console.log('Requisição feita'))
     }, [])

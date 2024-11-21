@@ -24,7 +24,7 @@ function Analise() {
     useEffect(() => {
         fetch('https://673b43ea339a4ce4451b6ae1.mockapi.io/dashboard/database')
             .then(results => results.json())
-            .then(data => setDatabase(data[id].analiseHistorica))
+            .then(data => setDatabase(data[0].analiseHistorica))
             .catch(error => console.log(error))
             .finally(() => console.log('Requisição feita'))
     }, [])

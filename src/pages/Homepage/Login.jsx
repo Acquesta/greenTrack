@@ -36,7 +36,7 @@ function Login() {
 
         if (usuario) {
             alert("Login bem-sucedido!");
-            navigate("/Dashboard/0/home")
+            navigate(`/Dashboard/${usuariosCadastrados.indexOf(usuario)}/home`)
         } else {
             alert("Email ou senha incorretos.");
         }

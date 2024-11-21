@@ -81,7 +81,7 @@ export default function MenuDashboard({ mostraMenu, themeMode }) {
       nome: "Sustentabilidade",
       link: `/Dashboard/${id}/sustentabilidade`,
     },
-  ];
+  ];   
 
   return (
     <div
@@ -153,7 +153,8 @@ export default function MenuDashboard({ mostraMenu, themeMode }) {
           <h3 className="text-base font-bold">Nome: {usuario.nome}</h3>
           <h3 className="text-base font-light">Email: {usuario.email}</h3>
         </div>
-      </div>
+      </div> 
+      
     </div>
   );
 }

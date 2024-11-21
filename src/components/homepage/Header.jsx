@@ -1,7 +1,8 @@
 import { NavLink, Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import LogoGreenTrack from '../../assets/LogoGreenTrack.png';
-import Switch from "./Botao";
+import Switch from "./Botao"; //Excluir se não usar
+import * as Icon from 'react-feather';
 
 export default function Header() {
 
@@ -33,8 +34,7 @@ export default function Header() {
     }
 
     return (
-        <header className="flex gap-3 items-center fixed w-full bg-fundo items-center justify-between text-white px-16 py-4 z-10">
-
+        <header className="flex gap-3 fixed w-full bg-fundo items-center justify-between text-white px-16 py-4 z-10">
             <div className="flex w-auto h-10 my-3">
                 <Link to="/" onClick={() => scrollToTop()}>
                     <img src={LogoGreenTrack} alt="Logo GreenTrack" className="h-full" />
@@ -44,7 +44,7 @@ export default function Header() {
                 <ul className="space-x-20 lg:flex hidden">
                     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         <NavLink to="/" onClick={() => scrollToTop()}>Home</NavLink>
-                        <ul className={`${isDropdownOpen ? "block" : "hidden"} absolute bg-fundo/80 w-64
+                        <ul className={`${isDropdownOpen ? "block" : "hidden"} absolute bg-fundo/80  w-64
                              p-4 rounded-lg left-[-100px]`}>
                             <li>
                                 <a href="#Dores" className="block px-10 py-4 hover:bg-gradient-to-r from-verde to-azul rounded-lg">Dores</a>
@@ -92,8 +92,7 @@ export default function Header() {
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                     <div className="h-1 w-9 bg-white rounded-full"></div>
                 </div>
-                <ul className={`${isDropdownOpen ? "block" : "hidden"} absolute bg-fundo/80 w-64
-                             p-4 rounded-lg right-5 mt-6`}>
+                <ul className={`${isDropdownOpen ? "block" : "hidden"} absolute bg-fundo/90 w-full p-4 rounded-lg right-0 mt-6 text-center`}>
 
                     <li>
                         <a href="/" onClick={() => scrollToTop()} className="block px-10 py-4 font-bold">Home</a>
@@ -116,6 +115,14 @@ export default function Header() {
                     <li>
                         <a href='/Contact' className="block px-10 py-4 font-bold">Contato</a>
                     </li>
+                    <div className="border-t px-14 sm:px-40 py-4 flex justify-between ">
+                        <li>
+                            <a href="/Login" className="flex flex-col items-center"><Icon.UserCheck/>Login</a>
+                        </li>
+                        <li>
+                            <a href="/Register" className="flex flex-col items-center"><Icon.UserPlus/>Registre-se</a>
+                        </li>
+                    </div>
                 </ul>
             </div>
         </header>

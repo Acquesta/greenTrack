@@ -18,7 +18,7 @@ function Inputs({ titulo, descricao, inputs, botao, outraPagina = ['' ,''], muda
             </div>
             <div className="w-2/3 xl:w-1/4 mx-auto flex flex-col justify-evenly my-[25vh] pt-5 pb-10 px-10 backdrop-blur-lg border border-white rounded-lg shadow-xl">
                 <h2 className="text-white text-4xl">{titulo}</h2>
-                <p className="text-white font-light">{descricao}</p>
+                <p className="text-white font-light mt-2">{descricao}</p>
                 <div className="flex flex-col gap-5 mt-10">
                     {
                         inputs.map((input, index) => (
@@ -28,7 +28,7 @@ function Inputs({ titulo, descricao, inputs, botao, outraPagina = ['' ,''], muda
                 </div>
                 <button onClick={() => funcao()} className="mt-5 py-2 w-full bg-gradient-to-r from-[#00611B] via-verde to-[#00611B] rounded-xl text-white font-bold">{botao}</button>
                 {
-                    botao === 'Login' ? <p className="text-white text-center my-2"><a href="/RedefinirSenha">Esqueceu a senha?</a></p> : ''
+                    botao === 'Login' ? <p className="text-white text-center my-2 mt-4"><a href="/RedefinirSenha">Esqueceu a senha?</a></p> : ''
                 }
                 <div className="flex justify-between items-center gap-10 mt-10">
                     <div className="w-full h-[1px] bg-white"></div>

@@ -1,10 +1,8 @@
 function CardEnergias({ titulo, descricao, beneficios, imagem}) {
     return ( 
-        <div className="flex flex-col lg:flex-row gap-5 ">
-            <div className="w-full min-h-32 md:w-[40vw] bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${imagem})`}}>
-                
-            </div>
-            <div className="w-[50vw] md:w-auto flex flex-col  text-white">
+        <div className="flex flex-col lg:flex-row gap-5 min-w-full px-10 h-auto">
+            <div className="w-full min-h-32 lg:w-[50vw] bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${imagem})`}}></div>
+            <div className="w-auto flex flex-col  text-white">
               <h3 className="text-4xl my-5">{titulo}</h3>
               <p className="text-white text-xl mb-2">Descrição</p>
               <p className="text-cinza">{descricao}</p>

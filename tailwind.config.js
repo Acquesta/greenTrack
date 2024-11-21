@@ -24,10 +24,10 @@ export default {
       },
       animation: {
         blink: 'blink 5s infinite',
-        'blink-delay-1': 'blink 2s infinite 0.4s', // Animação com 200ms de atraso
+        'blink-delay-1': 'blink 2s infinite 0.4s',
         'blink-delay-2': 'blink 4s infinite 0.1s',
         'blink-delay-3': 'blink 2s infinite 0.3s',
-        // 'fade-in-blur': 'fadeInBlur 4s ease-in-out forwards',
+
       },
     },
   },

@@ -26,14 +26,18 @@ function Importancia() {
   }
 
   useEffect(() => {
-    if (scrollContainerRef.current) {
-      const card = scrollContainerRef.current.firstChild;
-      if (card) {
-        const { width } = card.getBoundingClientRect();
-        setDivSize({ width });
+    const intervalId = setInterval(() => {
+      if (scrollContainerRef.current) {
+        const card = scrollContainerRef.current.firstChild;
+        if (card) {
+          const { width } = card.getBoundingClientRect();
+          setDivSize({ width });
+        }
       }
-    }
-  });
+    }, 3000); 
+
+    return () => clearInterval(intervalId);
+}, []);
 
   console.log(divSize)
 

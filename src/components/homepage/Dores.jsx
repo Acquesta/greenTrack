@@ -1,8 +1,8 @@
 function Dores() {
     return (
         <section className="h-auto relative pt-24 md:pt-26 items-center text-white gap-5" id="Dores">
-            <div className="absolute inset-0 flex items-start justify-end">
-                <div className=" w-32 h-32 mt-32 mr-24 bg-verde rounded-full blur-3xl -z-10"></div>
+            <div className="-z-30 absolute inset-0 flex items-start justify-end">
+                <div className=" w-32 h-32 mt-32 mr-24 bg-verde rounded-full blur-3xl "></div>
             </div>
             <section className=" w-full">
                 <h1 className="my-10 mx-14 text-4xl  md:text-6xl uppercase justify-self-center font-medium text-center">DESAFIOS DA CRISE ENERGÉTICA</h1>

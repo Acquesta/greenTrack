@@ -75,7 +75,9 @@ function Tecnologia() {
                                 nome={card.nome}
                                 descricao={card.descricao}
                                 imagem={card.imagem}
-                                invertido={card.invertido} />
+                                invertido={card.invertido} 
+                                key={card.nome}    
+                            />
                         ))
                     }
                 </div>

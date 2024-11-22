@@ -1,6 +1,7 @@
 function CardTecnologia({ nome, descricao, imagem, invertido }) {
     return (
         <section
+            key={nome}
             className={`flex mt-5 w-full max-md:flex-col gap-10 px-10 sm:px-20 ${
                 invertido ? "flex-row-reverse" : "flex-row"
             } justify-between items-center`}

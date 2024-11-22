@@ -51,7 +51,7 @@ const Product = () => {
             <section
                 className={` w-3/4 h-3/4 bg-cover  bg-center transition-opacity duration-500 ${isOn ? "opacity-100" : "opacity-0"}`}>
                 <div className="flex items-center flex-col lg:flex-row gap-8 h-full  text-white">
-                    <img src={imagem} alt="" className="w-full lg:w-1/2 h-auto" />
+                    <img src={imagem} alt="imagem de uma luz em cima de um notebook com a tela da dashboard" className="w-full lg:w-1/2 h-auto" />
                     <div className="flex flex-col mx-10 gap-4 items-center">
                         <h2 className="text-center text-4xl font-bold text-verde uppercase">Dashboard GreenTrack</h2>
                         <p className="text-center">Nosso dashboard é um facilitador para o monitoramento completo da produção do Hidrogênio Verde, contando com:</p>

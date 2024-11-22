@@ -27,7 +27,7 @@ function Footer() {
                     <h2 className="mb-2 font-bold">Nossa Página</h2>
                     <nav>
                         <ul className="grid grid-cols-2 md:grid-cols-1 gap-2 text-cinza">
-                            <li><a href="/Dashboard">Dashboard</a></li>
+                            <li><a href="/Login">Dashboard</a></li>
                             <li><a href="#Dores">Dores</a></li>
                             <li><a href="#Importancia">Importância</a></li>
                             <li><a href="#Tecnologia">Tecnologia</a></li>

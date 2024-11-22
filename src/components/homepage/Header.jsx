@@ -140,7 +140,7 @@ export default function Header() {
         >
           <li>
             <NavLink
-              href="/"
+              to="/"
               onClick={() => scrollToTop()}
               className="block px-10 py-4 font-bold"
             >
@@ -173,12 +173,12 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <NavLink href="/Login" className="block px-10 py-4 font-bold text-verde">
+            <NavLink to="/Login" className="block px-10 py-4 font-bold text-verde">
               Dashboard
             </NavLink>
           </li>
           <li>
-            <NavLink href="/Contact" className="block px-10 py-4 font-bold">
+            <NavLink to="/Contact" className="block px-10 py-4 font-bold">
               Contato
             </NavLink>
           </li>
@@ -187,13 +187,13 @@ export default function Header() {
             {!logado ? (
               <>
                 <li>
-                  <NavLink href="/Login" className="flex flex-col items-center">
+                  <NavLink to="/Login" className="flex flex-col items-center">
                     <Icon.UserCheck />
                     Login
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink href="/Cadastro" className="flex flex-col items-center">
+                  <NavLink to="/Cadastro" className="flex flex-col items-center">
                     <Icon.UserPlus />
                     Registre-se
                   </NavLink>

@@ -35,7 +35,7 @@ export default function MenuDashboard({ mostraMenu, themeMode }) {
   useEffect(() => {
     if (themeMode == "dark") {
       setColors({
-        fundo: "[#202731]",
+        fundo: "cinzaCard",
         texto: "white",
         svg: [relogio1, bateria1, ferramentas1, data1, grafico1, arvore1],
         logo: greenTrackLogo

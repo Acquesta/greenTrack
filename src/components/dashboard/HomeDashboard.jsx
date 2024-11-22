@@ -127,7 +127,7 @@ function HomeDashboard() {
                     <div className="flex flex-col md:flex-row justify-between gap-4 my-5">
                         {
                             facilidades.map((facilidade) => (
-                                <article key={facilidade.id} className={`md:w-1/2 bg-${themeMode == 'dark' ? '[#202731]' : 'white'} shadow-md px-3 flex flex-col justify-between gap-2 rounded-lg py-5`}>
+                                <article key={facilidade.id} className={`md:w-1/2 bg-${themeMode == 'dark' ? 'cinzaCard' : 'white'} shadow-md px-3 flex flex-col justify-between gap-2 rounded-lg py-5`}>
                                     <h2 className={`text-${themeMode == 'dark' ? 'white' : 'fundo'} text-xs font-bold lg:text-xl`}>{facilidade.title}</h2>
                                     {
                                         facilidade.type === 'default' ? (

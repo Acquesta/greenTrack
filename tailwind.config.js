@@ -12,6 +12,7 @@ export default {
         azul: '#5FA4E6',
         cinza: '#E5E5E5',
         cinzaescuro:'#b2b6bb',
+        cinzaCard: '#2A3545',
         verdeescuro: '#00611B'
       },
       fontFamily: {

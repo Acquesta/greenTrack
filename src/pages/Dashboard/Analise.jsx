@@ -55,6 +55,7 @@ function Analise() {
         <InfosDashboar
             title='Análise Histórica e Relatórios'
             description='Visualize em tabelas os hitóricos'
+            themeMode={themeMode}
         >
             {
                 database.rows &&

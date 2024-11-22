@@ -43,7 +43,7 @@ function Tecnologia() {
                 </h2>
             </section>
 
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-10">
+            <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-0 py-10">
                 <article className="text-cinza text-center px-20 lg:px-24">
                     <h3 className="text-azul uppercase text-xl font-bold mb-4">Geração de energia renovável</h3>
                     <h4 className="font-bold text-white text-lg mb-4">Turbinas eólicas flutuantes</h4>

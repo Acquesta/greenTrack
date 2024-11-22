@@ -3,6 +3,7 @@ import facebook from '../../assets/logos_facebook.png'
 import github from '../../assets/bi_github.png'
 
 import imagem from '../../assets/greenTrackLogin.jpg'
+import { NavLink } from 'react-router-dom';
 
 function Inputs({ titulo, descricao, inputs, botao, outraPagina = ['' ,''], mudaValue, funcao}) {
     return ( 
@@ -42,7 +43,7 @@ function Inputs({ titulo, descricao, inputs, botao, outraPagina = ['' ,''], muda
                     <img src={facebook} alt="logo do facebook" />
                     <img src={github} alt="logo do github" />
                 </section>
-                <p className='text-white text-center text-sm'><a href={outraPagina[1]}>{outraPagina[0]}</a></p>
+                <p className='text-white text-center text-sm'><NavLink href={outraPagina[1]}>{outraPagina[0]}</NavLink></p>
                 <footer className='flex justify-center gap-5 text-sm text-white my-3'>
                     <p>Termos e Condições</p>
                     <p>Suporte</p>

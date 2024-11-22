@@ -139,13 +139,13 @@ export default function Header() {
           } absolute bg-fundo/90 w-full p-4 rounded-lg right-0 mt-6 text-center`}
         >
           <li>
-            <a
+            <NavLink
               href="/"
               onClick={() => scrollToTop()}
               className="block px-10 py-4 font-bold"
             >
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
             <a href="#Product" className="block px-10 py-4 ">
@@ -173,30 +173,30 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a href="/Login" className="block px-10 py-4 font-bold text-verde">
+            <NavLink href="/Login" className="block px-10 py-4 font-bold text-verde">
               Dashboard
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="/Contact" className="block px-10 py-4 font-bold">
+            <NavLink href="/Contact" className="block px-10 py-4 font-bold">
               Contato
-            </a>
+            </NavLink>
           </li>
 
           <div className="border-t px-14 sm:px-40 py-4 flex justify-between items-center">
             {!logado ? (
               <>
                 <li>
-                  <a href="/Login" className="flex flex-col items-center">
+                  <NavLink href="/Login" className="flex flex-col items-center">
                     <Icon.UserCheck />
                     Login
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/Cadastro" className="flex flex-col items-center">
+                  <NavLink href="/Cadastro" className="flex flex-col items-center">
                     <Icon.UserPlus />
                     Registre-se
-                  </a>
+                  </NavLink>
                 </li>
               </>
             ) : (

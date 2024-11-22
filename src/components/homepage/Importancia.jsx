@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import efeito from "../../assets/efeito.png"
+// import efeito from "../../assets/efeito.png"
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -27,13 +27,13 @@ function Importancia() {
 
   useEffect(() => {
     if (scrollContainerRef.current) {
-        const card = scrollContainerRef.current.firstChild;
-        if (card) {
-            const { width } = card.getBoundingClientRect();
-            setDivSize({ width });
-        }
+      const card = scrollContainerRef.current.firstChild;
+      if (card) {
+        const { width } = card.getBoundingClientRect();
+        setDivSize({ width });
+      }
     }
-});
+  });
 
   console.log(divSize)
 
@@ -149,22 +149,24 @@ function Importancia() {
 
   return (
     <>
-      <div className="relative  bg-verde" id="Importancia">
-        <img src={efeito} alt="efeitos coloridos" className="pointer-events-none absolute inset-0 object-cover z-0" />
-      </div>
+      <section className="relative" id="Importancia">
+        <div className="absolute inset-0 flex items-end justify-start">
+          <div className=" w-32 h-32 mb-32 ml-72 bg-azul rounded-full blur-3xl -z-10"></div>
+        </div>
+      </section>
 
-      <div className="relative z-1 pt-24">
+      <section className="relative z-1 pt-24" id="Importancia">
 
-        <div className=" w-full text-white">
+        <section className=" w-full text-white">
           <h1 className="my-16 mx-14 text-4xl  md:text-6xl uppercase justify-self-center font-medium text-center">Importância da transição energética</h1>
           <h2 className="mb-8 mx-5 sm:mx-14 text-3xl uppercase justify-self-center font-medium text-center">Tipos de energia</h2>
-        </div>
+        </section>
 
-        <div className="flex item-center mx-10">
+        <section className="flex item-center mx-10">
           <button className="hidden lg:block" onClick={() => scrollDireita('left')}>
             <img className=" rotate-180 h-40 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
           </button>
-          <div ref={scrollContainerRef} className=" flex justify-start overflow-scroll overflow-y-hidden overflow-x-hidden max-w-[90vw] mx-0 md:mx-auto ">
+          <article ref={scrollContainerRef} className=" flex justify-start overflow-scroll overflow-y-hidden overflow-x-hidden max-w-[90vw] mx-0 md:mx-auto ">
 
             {energias.map((energia) => (
               <CardEnergias
@@ -175,24 +177,24 @@ function Importancia() {
               />
             ))}
 
-          </div>
+          </article>
           <button className="hidden lg:block" onClick={() => scrollDireita('right')}>
             <img className="h-40 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
           </button>
-        </div>
+        </section>
 
-        <div className="flex gap-10 justify-center mt-10">
+        <section className="flex gap-10 justify-center mt-10">
           <button className="hidden max-lg:block" onClick={() => scrollDireita('left')}>
             <img className=" rotate-180 h-14 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
           </button>
           <button className="hidden max-lg:block" onClick={() => scrollDireita('right')}>
             <img className="h-14 min-w-14" src={BotaoPassa} alt="botao para passar slide" />
           </button>
-        </div>
+        </section>
 
-        <div className=" w-full text-white">
+        <section className=" w-full text-white">
           <h2 className="my-16 mx-5 sm:mx-14 text-3xl uppercase justify-self-center font-medium text-center">Vantagens da transição para um modelo sustentável</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
+          <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
             {
               vantagens.map((vantagem) => (
                 <CardInfos
@@ -201,12 +203,12 @@ function Importancia() {
                 />
               ))
             }
-          </div>
-        </div>
+          </article>
+        </section>
 
-        <div className="w-full text-white">
+        <section className="w-full text-white">
           <h2 className="my-16 mx-5 sm:mx-14 text-3xl uppercase justify-self-center font-medium text-center">Desafios da transição energética</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
+          <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
             {
               desafios.map((desafio) => (
                 <CardInfos
@@ -216,12 +218,14 @@ function Importancia() {
                 />
               ))
             }
-          </div>
+          </article>
+        </section>
+        <div className="bottom-64 absolute flex  w-full justify-center">
+          <div className=" w-[30vw] h-[30vw] mx-auto bg-gradient-to-br from-azul/60 to-verde/60 rounded-full blur-3xl -z-10"></div>
         </div>
-
-        <div className=" w-full text-white">
+        <section className=" w-full text-white">
           <h2 className="my-16 mx-5 sm:mx-14 text-3xl uppercase justify-self-center font-medium text-center">Oportunidades de desenvolvimento no setor</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
+          <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-5 sm:px-16">
             {
               oportunidades.map((oportunidade) => (
                 <CardInfos
@@ -229,10 +233,10 @@ function Importancia() {
                   descricao={oportunidade.descricao}
                 />
               ))
-            }
-          </div>
-        </div>
-      </div>
+            } 
+          </article>
+        </section>
+      </section>
 
     </>
   );

@@ -11,6 +11,7 @@ export default {
         verde: '#1EBF49',
         azul: '#5FA4E6',
         cinza: '#E5E5E5',
+        cinzaescuro:'#b2b6bb',
         verdeescuro: '#00611B'
       },
       fontFamily: {

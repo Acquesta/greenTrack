@@ -8,8 +8,9 @@ function Footer() {
                 <div className="w-full flex justify-center items-center">
                     <img src={LogoGreenTrack} alt="Logo GreenTrack" className="max-w-[150px]" />
                 </div>
-                <div>
-                    <p className="mb-2 font-bold">PARCEIROS</p>
+
+                <section>
+                    <h2 className="mb-2 font-bold">Parceiros</h2>
                     <nav>
                         <ul className="grid grid-cols-2 md:grid-cols-1 gap-2 text-cinza">
                             <li><a href="https://www.fiaformulae.com/pt-br/news">FIA Formula E</a></li>
@@ -20,9 +21,10 @@ function Footer() {
                             <li><a href="https://www.ultragaz.com.br/">Ultragaz</a></li>
                         </ul>
                     </nav>
-                </div>
-                <div>
-                    <p className="mb-2 font-bold">NOSSA PÁGINA</p>
+                </section>
+
+                <section>
+                    <h2 className="mb-2 font-bold">Nossa Página</h2>
                     <nav>
                         <ul className="grid grid-cols-2 md:grid-cols-1 gap-2 text-cinza">
                             <li><a href="/Dashboard">Dashboard</a></li>
@@ -33,37 +35,52 @@ function Footer() {
                             <li><a href="/Contact">Contato</a></li>
                         </ul>
                     </nav>
-                </div>
-                <div className="md:col-span-2">
-                    <h1 className="font-bold mb-6">Subscreva a nossa Newsletter</h1>
+                </section>
+
+                <section className="md:col-span-2">
+                    <h2 className="font-bold mb-6">Subscreva a nossa Newsletter</h2>
                     <p className="mb-5 text-cinza">Inscreva-se na nossa newsletter e acompanhe a gente salvando o mundo.</p>
-                    <div className="flex flex-col md:flex-row gap-2">
+                    <form className="flex flex-col md:flex-row gap-2">
                         <input
                             type="email"
                             placeholder="O seu email"
                             className="h-12 w-full px-4 text-fundo border border-cinza focus:outline-none"
+                            aria-label="Digite o seu email"
                         />
-                        <button className="border text-white px-4 py-2 h-12 hover:bg-azul transition">
+                        <button
+                            type="submit"
+                            className="border text-white px-4 py-2 h-12 hover:bg-azul transition"
+                        >
                             Subscrever
                         </button>
-                    </div>
-                </div>
+                    </form>
+                </section>
             </div>
+
             <div className="border-t py-6 px-8">
-                <div className="flex flex-col md:flex-row justify-between  gap-4 text-cinza text-sm">
-                    <div className="flex flex-col md:flex-row gap-4 ">
-                        <p className='justify-center flex'> © 2024 . Todos os direitos reservados.</p>
-                        <div className="flex flex-wrap gap-4 underline justify-center">
+                <div className="flex flex-col md:flex-row justify-between gap-4 text-cinza text-sm">
+                    <div className="flex flex-col md:flex-row gap-4">
+                        <p className="text-center">© 2024. Todos os direitos reservados.</p>
+                        <nav className="flex flex-wrap gap-4 underline justify-center">
                             <a href="*">Política de Privacidade</a>
                             <a href="*">Termos e Condições</a>
                             <a href="*">Política de Cookies</a>
-                        </div>
+                        </nav>
                     </div>
+
                     <div className="flex gap-4 justify-center">
-                        <Icon.Facebook className="cursor-pointer" />
-                        <Icon.Instagram className="cursor-pointer" />
-                        <Icon.Twitter className="cursor-pointer" />
-                        <Icon.Linkedin className="cursor-pointer" />
+                        <a href="https://facebook.com">
+                            <Icon.Facebook className="cursor-pointer" />
+                        </a>
+                        <a href="https://instagram.com">
+                            <Icon.Instagram className="cursor-pointer" />
+                        </a>
+                        <a href="https://twitter.com">
+                            <Icon.Twitter className="cursor-pointer" />
+                        </a>
+                        <a href="https://linkedin.com">
+                            <Icon.Linkedin className="cursor-pointer" />
+                        </a>
                     </div>
                 </div>
             </div>

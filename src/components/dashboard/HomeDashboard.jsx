@@ -89,7 +89,7 @@ function HomeDashboard() {
             themeMode={themeMode}
         >
 
-                <div className="flex flex-col lg:flex-row gap-5 justify-between">
+                <section className="flex flex-col lg:flex-row gap-5 justify-between">
                     <CardHome nome='Consumo Último mês' themeMode={themeMode}>
                         <ThemeProvider theme={newTheme}>
                             <LineChart
@@ -103,7 +103,6 @@ function HomeDashboard() {
                                 series={[
                                     {
                                         data: [2, 5, 2, 8, 1, 50, 2],
-                                        // area: true,  
                                             
                                     },
                                 ]}
@@ -114,21 +113,21 @@ function HomeDashboard() {
                     <CardHome nome='Notificações' themeMode={themeMode} >
                         {
                             notificacoes.map((notificacao) => (
-                                <div key={notificacao.id} className={`flex justify-evenly items-center bg-[#415572]  rounded-md mx-3 py-3 cursor-pointer`}>
+                                <article key={notificacao.id} className={`flex justify-evenly items-center bg-[#415572]  rounded-md mx-3 py-3 cursor-pointer`}>
                                     <img src={aviso} alt="icone de aviso branco" />
                                     <h3 className="text-base font-semibold text-white uppercase">{notificacao.title}</h3>
                                     <img src={setaDireita} alt="icone de aviso branco" />
-                                </div>
+                                </article>
                             ))
                         }
                     </CardHome>
-                </div>
-                <div className="py-5">
+                </section>
+                <section className="py-5">
                     <h2 className="text-white text-3xl font-bold">Facilidades</h2>
                     <div className="flex flex-col md:flex-row justify-between gap-4 my-5">
                         {
                             facilidades.map((facilidade) => (
-                                <div key={facilidade.id} className={`md:w-1/2 bg-${themeMode == 'dark' ? '[#202731]' : 'white'} shadow-md px-3 flex flex-col justify-between gap-2 rounded-lg py-5`}>
+                                <article key={facilidade.id} className={`md:w-1/2 bg-${themeMode == 'dark' ? '[#202731]' : 'white'} shadow-md px-3 flex flex-col justify-between gap-2 rounded-lg py-5`}>
                                     <h2 className={`text-${themeMode == 'dark' ? 'white' : 'fundo'} text-xs font-bold lg:text-xl`}>{facilidade.title}</h2>
                                     {
                                         facilidade.type === 'default' ? (
@@ -156,12 +155,12 @@ function HomeDashboard() {
                                             </>
                                         )
                                     }
-                                </div>
+                                </article>
                             ))
                         }
                     </div>
 
-                </div>
+                </section>
         </InfosDashboar>
         </>
      );

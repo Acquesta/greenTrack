@@ -51,127 +51,6 @@ function Previsao() {
 
     XLSX.writeFile(workbook, `${fileName}.xlsx`);
   };
-  //   {
-  //     london: 59,
-  //     paris: 57,
-  //     newYork: 86,
-  //     seoul: 21,
-  //     month: 'Jan',
-  //     peakDemand: false,
-  //     productionCost: { london: 1000, paris: 950, newYork: 1500, seoul: 400 },
-  //     costOptimization: 'Monitorar consumo e ajustar cargas para reduzir custo de pico.',
-  //   },
-  //   {
-  //     london: 50,
-  //     paris: 52,
-  //     newYork: 78,
-  //     seoul: 28,
-  //     month: 'Feb',
-  //     peakDemand: false,
-  //     productionCost: { london: 900, paris: 880, newYork: 1400, seoul: 350 },
-  //     costOptimization: 'Analisar horários de pico e usar fontes alternativas de energia.',
-  //   },
-  //   {
-  //     london: 47,
-  //     paris: 53,
-  //     newYork: 106,
-  //     seoul: 41,
-  //     month: 'Mar',
-  //     peakDemand: false,
-  //     productionCost: { london: 950, paris: 900, newYork: 1600, seoul: 420 },
-  //     costOptimization: 'Revisar uso de energia durante os horários de pico e automatizar processos.',
-  //   },
-  //   {
-  //     london: 54,
-  //     paris: 56,
-  //     newYork: 92,
-  //     seoul: 73,
-  //     month: 'Apr',
-  //     peakDemand: false,
-  //     productionCost: { london: 980, paris: 920, newYork: 1500, seoul: 500 },
-  //     costOptimization: 'Investir em equipamentos de maior eficiência energética.',
-  //   },
-  //   {
-  //     london: 57,
-  //     paris: 69,
-  //     newYork: 92,
-  //     seoul: 99,
-  //     month: 'May',
-  //     peakDemand: true, // Período de pico
-  //     productionCost: { london: 1300, paris: 1250, newYork: 1800, seoul: 750 },
-  //     costOptimization: 'Implementar sistemas de carga inteligente para reduzir consumo nos picos.',
-  //   },
-  //   {
-  //     london: 60,
-  //     paris: 63,
-  //     newYork: 103,
-  //     seoul: 144,
-  //     month: 'June',
-  //     peakDemand: true, // Período de pico
-  //     productionCost: { london: 1350, paris: 1300, newYork: 1900, seoul: 900 },
-  //     costOptimization: 'Aumentar a utilização de fontes renováveis durante os picos de demanda.',
-  //   },
-  //   {
-  //     london: 59,
-  //     paris: 60,
-  //     newYork: 105,
-  //     seoul: 319,
-  //     month: 'July',
-  //     peakDemand: true, // Período de pico
-  //     productionCost: { london: 1400, paris: 1350, newYork: 2000, seoul: 1200 },
-  //     costOptimization: 'Ajustar a produção e implementar tecnologias de armazenamento de energia.',
-  //   },
-  //   {
-  //     london: 65,
-  //     paris: 60,
-  //     newYork: 106,
-  //     seoul: 249,
-  //     month: 'Aug',
-  //     peakDemand: true, // Período de pico
-  //     productionCost: { london: 1450, paris: 1400, newYork: 2100, seoul: 1100 },
-  //     costOptimization: 'Revisar contratos de fornecimento de energia para reduzir custos durante picos.',
-  //   },
-  //   {
-  //     london: 51,
-  //     paris: 51,
-  //     newYork: 95,
-  //     seoul: 131,
-  //     month: 'Sept',
-  //     peakDemand: false,
-  //     productionCost: { london: 1000, paris: 950, newYork: 1500, seoul: 400 },
-  //     costOptimization: 'Melhorar sistemas de distribuição para evitar picos de demanda inesperados.',
-  //   },
-  //   {
-  //     london: 60,
-  //     paris: 65,
-  //     newYork: 97,
-  //     seoul: 55,
-  //     month: 'Oct',
-  //     peakDemand: false,
-  //     productionCost: { london: 1100, paris: 1050, newYork: 1600, seoul: 450 },
-  //     costOptimization: 'Fazer ajustes de manutenção preventiva para evitar falhas durante períodos críticos.',
-  //   },
-  //   {
-  //     london: 67,
-  //     paris: 64,
-  //     newYork: 76,
-  //     seoul: 48,
-  //     month: 'Nov',
-  //     peakDemand: false,
-  //     productionCost: { london: 1150, paris: 1100, newYork: 1550, seoul: 400 },
-  //     costOptimization: 'Analisar e otimizar o uso de energia fora dos horários de pico.',
-  //   },
-  //   {
-  //     london: 61,
-  //     paris: 70,
-  //     newYork: 103,
-  //     seoul: 25,
-  //     month: 'Dec',
-  //     peakDemand: false,
-  //     productionCost: { london: 1200, paris: 1150, newYork: 1600, seoul: 350 },
-  //     costOptimization: 'Implementar melhorias nas infraestruturas de distribuição para reduzir perdas de energia.',
-  //   },
-  // ];
 
   return (
     <InfosDashboar
@@ -220,7 +99,7 @@ function Previsao() {
           <div className="px-5">
             <button
               onClick={() =>
-                exportToExcel(rows, "Sugestoes_Otimização_Consumo_Energético")
+                exportToExcel(database?.rows, "Sugestoes_Otimização_Consumo_Energético")
               }
               className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white"
             >

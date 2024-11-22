@@ -123,7 +123,7 @@ function HomeDashboard() {
                     </CardHome>
                 </section>
                 <section className="py-5">
-                    <h2 className="text-white text-3xl font-bold">Facilidades</h2>
+                    <h2 className={`text-${themeMode == 'dark' ? 'white' : 'fundo'} text-3xl font-bold`}>Facilidades</h2>
                     <div className="flex flex-col md:flex-row justify-between gap-4 my-5">
                         {
                             facilidades.map((facilidade) => (

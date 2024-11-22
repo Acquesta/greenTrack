@@ -59,7 +59,7 @@ function manutencao() {
             <ThemeProvider theme={newTheme} >
                 <CardHome nome='Monitoramento de Componentes Críticos' height="auto" themeMode={themeMode}>
                     <div className="px-5">
-                        <button onClick={() => exportToExcel(rows, 'Monitoramento_Componentes_Criticos')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
+                        <button onClick={() => exportToExcel(graficoCriticos?.rows, 'Monitoramento_Componentes_Criticos')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
                             Exportar planilha
                             <img className="right-0" src={download} alt="" />  
                         </button>
@@ -87,7 +87,7 @@ function manutencao() {
 
                 <CardHome nome='Falhas e Anomalias' height="auto" themeMode={themeMode}>
                     <div className="px-5">
-                        <button onClick={() => exportToExcel(rows2, 'Falhas_Anomalias')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
+                        <button onClick={() => exportToExcel(graficoFalhasAnomalias?.rows, 'Falhas_Anomalias')} className="bg-verde flex items-center justify-center gap-2 mb-5 px-3 py-2 rounded-lg text-white">
                             Exportar planilha
                             <img className="right-0" src={download} alt="" />  
                         </button>

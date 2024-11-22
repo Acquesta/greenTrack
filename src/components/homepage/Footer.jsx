@@ -28,12 +28,12 @@ function Footer() {
                     <h2 className="mb-2 font-bold">Nossa Página</h2>
                     <nav>
                         <ul className="grid grid-cols-2 md:grid-cols-1 gap-2 text-cinza">
-                            <li><NavLink href="/Login">Dashboard</NavLink></li>
+                            <li><NavLink to="/Login">Dashboard</NavLink></li>
                             <li><a href="#Dores">Dores</a></li>
                             <li><a href="#Importancia">Importância</a></li>
                             <li><a href="#Tecnologia">Tecnologia</a></li>
                             <li><a href="#Sugestoes">Sugestões</a></li>
-                            <li><NavLink href="/Contact">Contato</NavLink></li>
+                            <li><NavLink to="/Contact">Contato</NavLink></li>
                         </ul>
                     </nav>
                 </section>

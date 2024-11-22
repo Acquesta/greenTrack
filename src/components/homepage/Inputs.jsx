@@ -43,7 +43,7 @@ function Inputs({ titulo, descricao, inputs, botao, outraPagina = ['' ,''], muda
                     <img src={facebook} alt="logo do facebook" />
                     <img src={github} alt="logo do github" />
                 </section>
-                <p className='text-white text-center text-sm'><NavLink href={outraPagina[1]}>{outraPagina[0]}</NavLink></p>
+                <p className='text-white text-center text-sm'><NavLink to={outraPagina[1]}>{outraPagina[0]}</NavLink></p>
                 <footer className='flex justify-center gap-5 text-sm text-white my-3'>
                     <p>Termos e Condições</p>
                     <p>Suporte</p>

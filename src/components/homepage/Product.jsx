@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import imagem from "../../assets/dash.png"
 
 import React, { useState } from "react";
@@ -61,9 +62,9 @@ const Product = () => {
                             <li>- Análise de dados;</li>
                             <li>- Previsão com IA.</li>
                         </ul>
-                        <a className="bg-verde bg-gradient-to-br from-verdeescuro/50 via-verde to-verdeescuro/50 py-4 px-8 text-center text-white rounded-xl flex justify-self-center text-2xl mt-4 hover:text-verde hover:font-bold hover:bg-gradient hover:from-white hover:to-white" href="/Login">
+                        <NavLink to='/Login' className="bg-verde bg-gradient-to-br from-verdeescuro/50 via-verde to-verdeescuro/50 py-4 px-8 text-center text-white rounded-xl flex justify-self-center text-2xl mt-4 hover:text-verde hover:font-bold hover:bg-gradient hover:from-white hover:to-white" href="/Login">
                             Conheça o Dashboard
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
             </section>

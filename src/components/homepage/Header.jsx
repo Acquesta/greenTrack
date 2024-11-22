@@ -119,7 +119,7 @@ export default function Header() {
       ) : (
         <div
           onClick={() => deslogar()}
-          className="align-center px-7 py-3 rounded-full leading-none bg-azul hover:bg-white hover:text-azul hover:font-medium cursor-pointer"
+          className="hidden lg:flex align-center px-7 py-3 rounded-full leading-none bg-azul hover:bg-white hover:text-azul hover:font-medium cursor-pointer"
         >
           Deslogar
         </div>

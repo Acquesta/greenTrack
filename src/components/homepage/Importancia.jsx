@@ -153,11 +153,11 @@ function Importancia() {
 
   return (
     <>
-      <section className="relative" id="Importancia">
-        <div className="absolute inset-0 flex items-end justify-start">
+      <div className="relative" id="Importancia">
+        <div className=" flex items-end justify-start">
           <div className=" w-32 h-32 mb-32 ml-72 bg-azul rounded-full blur-3xl -z-10"></div>
         </div>
-      </section>
+      </div>
 
       <section className="relative z-1 pt-24" id="Importancia">
 

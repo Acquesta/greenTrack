@@ -8,7 +8,7 @@ function ContactMe() {
                 className="hidden md:block h-full w-full md:w-[40vw] bg-center bg-cover rounded-tl-2xl md:rounded-tr-none"
             ></figure>
             <form
-                className="form h-full mx-auto flex flex-col gap-5 w-11/12 md:w-2/3 lg:w-1/3 md:px-10 py-[18vh]"
+                className="form h-full mx-auto flex flex-col gap-5 w-11/12 md:w-2/3 lg:w-2/4 md:px-10 py-[18vh]"
             >
                 <section>
                     <h1 className="text-verde text-3xl md:text-5xl lg:text-6xl uppercase mb-4 text-center md:text-left">
@@ -37,7 +37,7 @@ function ContactMe() {
                     <label>
                         <span className="sr-only">Mensagem</span>
                         <textarea
-                            className="border border-white bg-transparent rounded-2xl p-4 text-white h-32 md:h-44 lg:h-80 w-full resize-none"
+                            className="border border-white bg-transparent rounded-2xl p-4 text-white h-32 md:h-44 w-full resize-none"
                             placeholder="Digite sua mensagem"
                             required
                         />

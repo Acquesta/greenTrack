@@ -22,8 +22,8 @@ export default function MenuDashboard({ mostraMenu }) {
     
 
   return (
-    <div className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} lg:opacity-100 z-20 fixed w-2/3 max-lg:top-14 lg:fixed bg-[#202731] lg:w-[15vw] h-[100vh] pt-6 text-white lg:flex flex-col justify-between`}>
-        <div>
+    <section className={`${mostraMenu ? 'opacity-100' : 'opacity-0 '} lg:opacity-100 z-20 fixed w-2/3 max-lg:top-14 lg:fixed bg-[#202731] lg:w-[15vw] h-[100vh] pt-6 text-white lg:flex flex-col justify-between`}>
+        <section>
             <NavLink to='/' className="text-2xl font-bold uppercase text-white text-center ">
                 <img src={greenTrackLogo} alt="logo da greenTrack" className="h-[10vw] md:h-[4vw] mx-auto"/>
             </NavLink>
@@ -56,7 +56,7 @@ export default function MenuDashboard({ mostraMenu }) {
                 />
                 </svg>
             </NavLink>
-            <div className="h-auto">
+            <section className="h-auto">
                 <h3 className="text-xl font-light px-8 my-3">Funcionalidades</h3>
                 <div className="flex flex-col gap-1">
                     <MenuItem 
@@ -90,8 +90,8 @@ export default function MenuDashboard({ mostraMenu }) {
                         link = {`/Dashboard/0/sustentabilidade`}
                     />
                 </div>
-            </div>
-        </div>
+            </section>
+        </section>
       {/* <div className="bottom-5 flex items-center justify-center gap-5 px-auto py-6 border-t-[1px] border-white">
         <div className="w-10 h-10 hidden xl:block bg-slate-300 rounded-full">
             
@@ -102,6 +102,6 @@ export default function MenuDashboard({ mostraMenu }) {
         </div>
       </div> 
       */}
-    </div>
+    </section>
   );
 }

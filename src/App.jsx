@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom"
 import Header from "./components/homepage/Header"
-import Dashboard from "./Dashboard"
 import Footer from "./components/homepage/Footer"
 
 function App() {

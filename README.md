@@ -1,3 +1,6 @@
+![Imagem do site](ImagemPag.png)
+
+
 # GreenTrack
 
 Integrantes:
